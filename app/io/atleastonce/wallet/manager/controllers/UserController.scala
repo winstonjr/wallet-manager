@@ -26,5 +26,6 @@ class UserController @Inject()(cc: ControllerComponents,
   }
 
   def findById(id: String) = Action { implicit request: Request[AnyContent] =>
+    NotImplemented
   }
 }

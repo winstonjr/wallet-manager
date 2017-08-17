@@ -7,7 +7,7 @@
 		revision="1.0.0.0"
 		conf="test"
 		confs="universal, universal-docs, universal-src, compile, runtime, test, provided, optional, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170817071915"/>
+		date="20170817073731"/>
 	<dependencies>
 		<module organisation="org.scalatestplus.play" name="scalatestplus-play_2.12">
 			<revision name="3.1.0" status="release" pubdate="20170706173112" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/scalatestplus-play" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="143">
@@ -229,209 +229,209 @@
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133708" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="61">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133708" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="61">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="7538" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture_2.12/2.0.0-M9/rapture_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="7704" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture_2.12/2.0.0-M9/rapture_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager_2.12" conf="test, compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture_2.12" type="jar" ext="jar" status="successful" details="" size="299" time="841" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/jars/rapture_2.12-2.0.0-M9.jar">
+					<artifact name="rapture_2.12" type="jar" ext="jar" status="no" details="" size="299" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/jars/rapture_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture_2.12/2.0.0-M9/rapture_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-java8-support_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427123946" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="104">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427123946" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="104">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2011" time="780" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-java8-support_2.12/2.0.0-M9/rapture-java8-support_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3118" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-java8-support_2.12/2.0.0-M9/rapture-java8-support_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-java8-support_2.12" type="jar" ext="jar" status="successful" details="" size="9597" time="922" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/jars/rapture-java8-support_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-java8-support_2.12" type="jar" ext="jar" status="no" details="" size="9597" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/jars/rapture-java8-support_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-java8-support_2.12/2.0.0-M9/rapture-java8-support_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-http-json_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133657" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="103">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133657" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="103">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2183" time="792" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http-json_2.12/2.0.0-M9/rapture-http-json_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3259" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http-json_2.12/2.0.0-M9/rapture-http-json_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-http-json_2.12" type="jar" ext="jar" status="successful" details="" size="5888" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/jars/rapture-http-json_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-http-json_2.12" type="jar" ext="jar" status="no" details="" size="5888" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/jars/rapture-http-json_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-http-json_2.12/2.0.0-M9/rapture-http-json_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-core-scalaz_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427122709" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="99">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427122709" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="99">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2363" time="924" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core-scalaz_2.12/2.0.0-M9/rapture-core-scalaz_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3408" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core-scalaz_2.12/2.0.0-M9/rapture-core-scalaz_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-core-scalaz_2.12" type="jar" ext="jar" status="successful" details="" size="21680" time="718" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/jars/rapture-core-scalaz_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-core-scalaz_2.12" type="jar" ext="jar" status="no" details="" size="21680" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/jars/rapture-core-scalaz_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-core-scalaz_2.12/2.0.0-M9/rapture-core-scalaz_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalaz" name="scalaz-concurrent_2.12">
-			<revision name="7.2.8" status="release" pubdate="20161203105930" resolver="public" artresolver="public" homepage="http://scalaz.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="101">
+			<revision name="7.2.8" status="release" pubdate="20161203105930" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="101">
 				<license name="BSD-style" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="3201" time="782" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/ivy-7.2.8.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/ivy-7.2.8.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.12/7.2.8/scalaz-concurrent_2.12-7.2.8.pom"/>
+				<metadata-artifact status="no" details="" size="2949" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.12/7.2.8/scalaz-concurrent_2.12-7.2.8.pom"/>
 				<caller organisation="com.propensive" name="rapture-core-scalaz_2.12" conf="compile, runtime" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="scalaz-concurrent_2.12" type="bundle" ext="jar" status="successful" details="" size="177243" time="859" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/bundles/scalaz-concurrent_2.12-7.2.8.jar">
+					<artifact name="scalaz-concurrent_2.12" type="bundle" ext="jar" status="no" details="" size="177243" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/bundles/scalaz-concurrent_2.12-7.2.8.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.12/7.2.8/scalaz-concurrent_2.12-7.2.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalaz" name="scalaz-effect_2.12">
-			<revision name="7.2.8" status="release" pubdate="20161203105941" resolver="public" artresolver="public" homepage="http://scalaz.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="102">
+			<revision name="7.2.8" status="release" pubdate="20161203105941" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="102">
 				<license name="BSD-style" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="3011" time="702" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/ivy-7.2.8.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/ivy-7.2.8.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.12/7.2.8/scalaz-effect_2.12-7.2.8.pom"/>
+				<metadata-artifact status="no" details="" size="2790" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.12/7.2.8/scalaz-effect_2.12-7.2.8.pom"/>
 				<caller organisation="org.scalaz" name="scalaz-concurrent_2.12" conf="compile, runtime" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="7.2.8"/>
 				<artifacts>
-					<artifact name="scalaz-effect_2.12" type="bundle" ext="jar" status="successful" details="" size="296707" time="921" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/bundles/scalaz-effect_2.12-7.2.8.jar">
+					<artifact name="scalaz-effect_2.12" type="bundle" ext="jar" status="no" details="" size="296707" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/bundles/scalaz-effect_2.12-7.2.8.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.12/7.2.8/scalaz-effect_2.12-7.2.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalaz" name="scalaz-core_2.12">
-			<revision name="7.2.8" status="release" pubdate="20161203110121" resolver="public" artresolver="public" homepage="http://scalaz.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="100">
+			<revision name="7.2.8" status="release" pubdate="20161203110121" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="100">
 				<license name="BSD-style" url="http://opensource.org/licenses/BSD-3-Clause"/>
-				<metadata-artifact status="successful" details="" size="2829" time="779" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/ivy-7.2.8.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/ivy-7.2.8.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.8/scalaz-core_2.12-7.2.8.pom"/>
+				<metadata-artifact status="no" details="" size="2639" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.8/scalaz-core_2.12-7.2.8.pom"/>
 				<caller organisation="org.scalaz" name="scalaz-concurrent_2.12" conf="compile, runtime" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="7.2.8"/>
 				<caller organisation="com.propensive" name="rapture-core-scalaz_2.12" conf="compile, runtime" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="2.0.0-M9"/>
 				<caller organisation="org.scalaz" name="scalaz-effect_2.12" conf="compile, runtime" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="7.2.8"/>
 				<artifacts>
-					<artifact name="scalaz-core_2.12" type="bundle" ext="jar" status="successful" details="" size="7665664" time="2419" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/bundles/scalaz-core_2.12-7.2.8.jar">
+					<artifact name="scalaz-core_2.12" type="bundle" ext="jar" status="no" details="" size="7665664" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/bundles/scalaz-core_2.12-7.2.8.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.8/scalaz-core_2.12-7.2.8.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-currency_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427131630" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="98">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427131630" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="98">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1996" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-currency_2.12/2.0.0-M9/rapture-currency_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3103" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-currency_2.12/2.0.0-M9/rapture-currency_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-currency_2.12" type="jar" ext="jar" status="successful" details="" size="62350" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/jars/rapture-currency_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-currency_2.12" type="jar" ext="jar" status="no" details="" size="62350" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/jars/rapture-currency_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-currency_2.12/2.0.0-M9/rapture-currency_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-xml_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427131553" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="97">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427131553" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="97">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1981" time="769" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-xml_2.12/2.0.0-M9/rapture-xml_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-xml_2.12/2.0.0-M9/rapture-xml_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-xml_2.12" type="jar" ext="jar" status="successful" details="" size="111346" time="816" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/jars/rapture-xml_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-xml_2.12" type="jar" ext="jar" status="no" details="" size="111346" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/jars/rapture-xml_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-xml_2.12/2.0.0-M9/rapture-xml_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-latex_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133158" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="96">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133158" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="96">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2170" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-latex_2.12/2.0.0-M9/rapture-latex_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3246" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-latex_2.12/2.0.0-M9/rapture-latex_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-latex_2.12" type="jar" ext="jar" status="successful" details="" size="37172" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/jars/rapture-latex_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-latex_2.12" type="jar" ext="jar" status="no" details="" size="37172" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/jars/rapture-latex_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-latex_2.12/2.0.0-M9/rapture-latex_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-google-translate_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133422" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="92">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133422" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="92">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2576" time="781" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-google-translate_2.12/2.0.0-M9/rapture-google-translate_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3590" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-google-translate_2.12/2.0.0-M9/rapture-google-translate_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-google-translate_2.12" type="jar" ext="jar" status="successful" details="" size="17601" time="644" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/jars/rapture-google-translate_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-google-translate_2.12" type="jar" ext="jar" status="no" details="" size="17601" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/jars/rapture-google-translate_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-google-translate_2.12/2.0.0-M9/rapture-google-translate_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-json-jawn_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427131834" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="93">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427131834" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="93">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2358" time="779" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json-jawn_2.12/2.0.0-M9/rapture-json-jawn_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3403" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json-jawn_2.12/2.0.0-M9/rapture-json-jawn_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-google-translate_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-json-jawn_2.12" type="jar" ext="jar" status="successful" details="" size="22778" time="815" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/jars/rapture-json-jawn_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-json-jawn_2.12" type="jar" ext="jar" status="no" details="" size="22778" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/jars/rapture-json-jawn_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-json-jawn_2.12/2.0.0-M9/rapture-json-jawn_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.spire-math" name="jawn-ast_2.12">
-			<revision name="0.10.4" status="release" pubdate="20161113020017" resolver="public" artresolver="public" homepage="http://github.com/non/jawn" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="95">
+			<revision name="0.10.4" status="release" pubdate="20161113020017" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/non/jawn" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="95">
 				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
-				<metadata-artifact status="successful" details="" size="1995" time="816" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/ivy-0.10.4.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/ivy-0.10.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-ast_2.12/0.10.4/jawn-ast_2.12-0.10.4.pom"/>
+				<metadata-artifact status="no" details="" size="3020" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/ivy-0.10.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-ast_2.12/0.10.4/jawn-ast_2.12-0.10.4.pom"/>
 				<caller organisation="com.propensive" name="rapture-json-jawn_2.12" conf="compile, runtime" rev="0.10.4" rev-constraint-default="0.10.4" rev-constraint-dynamic="0.10.4" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="jawn-ast_2.12" type="jar" ext="jar" status="successful" details="" size="69195" time="820" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/jars/jawn-ast_2.12-0.10.4.jar">
+					<artifact name="jawn-ast_2.12" type="jar" ext="jar" status="no" details="" size="69195" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/jars/jawn-ast_2.12-0.10.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/spire-math/jawn-ast_2.12/0.10.4/jawn-ast_2.12-0.10.4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.spire-math" name="jawn-parser_2.12">
-			<revision name="0.10.4" status="release" pubdate="20161113020016" resolver="public" artresolver="public" homepage="http://github.com/non/jawn" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="94">
+			<revision name="0.10.4" status="release" pubdate="20161113020016" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/non/jawn" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="94">
 				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
-				<metadata-artifact status="successful" details="" size="1823" time="822" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/ivy-0.10.4.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/ivy-0.10.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-parser_2.12/0.10.4/jawn-parser_2.12-0.10.4.pom"/>
+				<metadata-artifact status="no" details="" size="2879" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/ivy-0.10.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-parser_2.12/0.10.4/jawn-parser_2.12-0.10.4.pom"/>
 				<caller organisation="org.spire-math" name="jawn-ast_2.12" conf="compile, runtime" rev="0.10.4" rev-constraint-default="0.10.4" rev-constraint-dynamic="0.10.4" callerrev="0.10.4"/>
 				<caller organisation="com.propensive" name="rapture-json-jawn_2.12" conf="compile, runtime" rev="0.10.4" rev-constraint-default="0.10.4" rev-constraint-dynamic="0.10.4" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="jawn-parser_2.12" type="jar" ext="jar" status="successful" details="" size="74239" time="818" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/jars/jawn-parser_2.12-0.10.4.jar">
+					<artifact name="jawn-parser_2.12" type="jar" ext="jar" status="no" details="" size="74239" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/jars/jawn-parser_2.12-0.10.4.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/spire-math/jawn-parser_2.12/0.10.4/jawn-parser_2.12-0.10.4.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-i18n_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133345" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="91">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133345" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="91">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2168" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-i18n_2.12/2.0.0-M9/rapture-i18n_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3244" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-i18n_2.12/2.0.0-M9/rapture-i18n_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-google-translate_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-i18n_2.12" type="jar" ext="jar" status="successful" details="" size="295354" time="994" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/jars/rapture-i18n_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-i18n_2.12" type="jar" ext="jar" status="no" details="" size="295354" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/jars/rapture-i18n_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-i18n_2.12/2.0.0-M9/rapture-i18n_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-mail_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133518" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="88">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133518" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="88">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2511" time="828" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mail_2.12/2.0.0-M9/rapture-mail_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3525" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mail_2.12/2.0.0-M9/rapture-mail_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-mail_2.12" type="jar" ext="jar" status="successful" details="" size="102850" time="808" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/jars/rapture-mail_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-mail_2.12" type="jar" ext="jar" status="no" details="" size="102850" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/jars/rapture-mail_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-mail_2.12/2.0.0-M9/rapture-mail_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-http_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133514" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133514" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="3602" time="815" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http_2.12/2.0.0-M9/rapture-http_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="4430" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http_2.12/2.0.0-M9/rapture-http_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http-json_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-http_2.12" type="jar" ext="jar" status="successful" details="" size="219111" time="993" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/jars/rapture-http_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-http_2.12" type="jar" ext="jar" status="no" details="" size="219111" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/jars/rapture-http_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-http_2.12/2.0.0-M9/rapture-http_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
@@ -449,27 +449,27 @@
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-html_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427133328" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427133328" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2899" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-html_2.12/2.0.0-M9/rapture-html_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3851" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-html_2.12/2.0.0-M9/rapture-html_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-mail_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-html_2.12" type="jar" ext="jar" status="successful" details="" size="132827" time="824" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/jars/rapture-html_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-html_2.12" type="jar" ext="jar" status="no" details="" size="132827" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/jars/rapture-html_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-html_2.12/2.0.0-M9/rapture-html_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-css_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427130201" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427130201" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="85">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2349" time="765" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-css_2.12/2.0.0-M9/rapture-css_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3394" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-css_2.12/2.0.0-M9/rapture-css_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-css_2.12" type="jar" ext="jar" status="successful" details="" size="118464" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/jars/rapture-css_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-css_2.12" type="jar" ext="jar" status="no" details="" size="118464" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/jars/rapture-css_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-css_2.12/2.0.0-M9/rapture-css_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
@@ -506,36 +506,36 @@
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-js_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427130227" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427130227" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1978" time="794" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-js_2.12/2.0.0-M9/rapture-js_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3085" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-js_2.12/2.0.0-M9/rapture-js_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-js_2.12" type="jar" ext="jar" status="successful" details="" size="29771" time="818" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/jars/rapture-js_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-js_2.12" type="jar" ext="jar" status="no" details="" size="29771" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/jars/rapture-js_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-js_2.12/2.0.0-M9/rapture-js_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-test_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132903" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="80">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132903" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="80">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2526" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-test_2.12/2.0.0-M9/rapture-test_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3540" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-test_2.12/2.0.0-M9/rapture-test_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-i18n_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-test_2.12" type="jar" ext="jar" status="successful" details="" size="67085" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/jars/rapture-test_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-test_2.12" type="jar" ext="jar" status="no" details="" size="67085" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/jars/rapture-test_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-test_2.12/2.0.0-M9/rapture-test_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="org.scalatest" name="scalatest_2.12">
-			<revision name="3.0.1" status="release" pubdate="20161110035252" resolver="public" artresolver="public" evicted="latest-revision" evicted-reason="" homepage="http://www.scalatest.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+			<revision name="3.0.1" status="release" pubdate="20161110035252" resolver="sbt-chain" artresolver="sbt-chain" evicted="latest-revision" evicted-reason="" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="5963" time="818" location="/home/winston/.ivy2/cache/org.scalatest/scalatest_2.12/ivy-3.0.1.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.scalatest/scalatest_2.12/ivy-3.0.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.1/scalatest_2.12-3.0.1.pom"/>
+				<metadata-artifact status="no" details="" size="5287" time="0" location="/home/winston/.ivy2/cache/org.scalatest/scalatest_2.12/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalatest/scalatest_2.12/3.0.1/scalatest_2.12-3.0.1.pom"/>
 				<evicted-by rev="3.0.3"/>
 				<caller organisation="com.propensive" name="rapture-test_2.12" conf="compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="2.0.0-M9"/>
 				<artifacts>
@@ -554,9 +554,9 @@
 			</revision>
 		</module>
 		<module organisation="org.scalactic" name="scalactic_2.12">
-			<revision name="3.0.1" status="release" pubdate="20161110035016" resolver="public" artresolver="public" evicted="transitive" evicted-reason="" homepage="http://www.scalatest.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+			<revision name="3.0.1" status="release" pubdate="20161110035016" resolver="sbt-chain" artresolver="sbt-chain" evicted="transitive" evicted-reason="" homepage="http://www.scalatest.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
 				<license name="the Apache License, ASL Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
-				<metadata-artifact status="successful" details="" size="2236" time="820" location="/home/winston/.ivy2/cache/org.scalactic/scalactic_2.12/ivy-3.0.1.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/org.scalactic/scalactic_2.12/ivy-3.0.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.1/scalactic_2.12-3.0.1.pom"/>
+				<metadata-artifact status="no" details="" size="2967" time="0" location="/home/winston/.ivy2/cache/org.scalactic/scalactic_2.12/ivy-3.0.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalactic/scalactic_2.12/3.0.1/scalactic_2.12-3.0.1.pom"/>
 				<caller organisation="org.scalatest" name="scalatest_2.12" conf="compile, runtime" rev="3.0.1" rev-constraint-default="3.0.1" rev-constraint-dynamic="3.0.1" callerrev="3.0.1"/>
 				<artifacts>
 				</artifacts>
@@ -574,80 +574,80 @@
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-text_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427114429" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="83">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427114429" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="83">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1984" time="779" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-text_2.12/2.0.0-M9/rapture-text_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-text_2.12/2.0.0-M9/rapture-text_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-test_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-latex_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-text_2.12" type="jar" ext="jar" status="successful" details="" size="10391" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/jars/rapture-text_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-text_2.12" type="jar" ext="jar" status="no" details="" size="10391" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/jars/rapture-text_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-text_2.12/2.0.0-M9/rapture-text_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-cli_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132737" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="81">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132737" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="81">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2162" time="804" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-cli_2.12/2.0.0-M9/rapture-cli_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3238" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-cli_2.12/2.0.0-M9/rapture-cli_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-test_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-latex_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-cli_2.12" type="jar" ext="jar" status="successful" details="" size="312020" time="1242" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/jars/rapture-cli_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-cli_2.12" type="jar" ext="jar" status="no" details="" size="312020" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/jars/rapture-cli_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-cli_2.12/2.0.0-M9/rapture-cli_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-log_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132436" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="82">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132436" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="82">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1979" time="774" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-log_2.12/2.0.0-M9/rapture-log_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3086" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-log_2.12/2.0.0-M9/rapture-log_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-cli_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-log_2.12" type="jar" ext="jar" status="successful" details="" size="67742" time="713" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/jars/rapture-log_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-log_2.12" type="jar" ext="jar" status="no" details="" size="67742" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/jars/rapture-log_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-log_2.12/2.0.0-M9/rapture-log_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-dom_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427115811" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="79">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427115811" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="79">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1981" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-dom_2.12/2.0.0-M9/rapture-dom_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-dom_2.12/2.0.0-M9/rapture-dom_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-css_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-dom_2.12" type="jar" ext="jar" status="successful" details="" size="88062" time="814" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/jars/rapture-dom_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-dom_2.12" type="jar" ext="jar" status="no" details="" size="88062" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/jars/rapture-dom_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-dom_2.12/2.0.0-M9/rapture-dom_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-json_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427131010" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427131010" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1984" time="815" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json_2.12/2.0.0-M9/rapture-json_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json_2.12/2.0.0-M9/rapture-json_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http-json_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-json-jawn_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-json_2.12" type="jar" ext="jar" status="successful" details="" size="144732" time="919" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/jars/rapture-json_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-json_2.12" type="jar" ext="jar" status="no" details="" size="144732" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/jars/rapture-json_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-json_2.12/2.0.0-M9/rapture-json_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-data_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427114149" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="77">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427114149" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="77">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1984" time="782" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-data_2.12/2.0.0-M9/rapture-data_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-data_2.12/2.0.0-M9/rapture-data_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-xml_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-js_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
@@ -655,23 +655,23 @@
 				<caller organisation="com.propensive" name="rapture-css_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-json_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-data_2.12" type="jar" ext="jar" status="successful" details="" size="204213" time="1026" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/jars/rapture-data_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-data_2.12" type="jar" ext="jar" status="no" details="" size="204213" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/jars/rapture-data_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-data_2.12/2.0.0-M9/rapture-data_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-net_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132637" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132637" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2149" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-net_2.12/2.0.0-M9/rapture-net_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3225" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-net_2.12/2.0.0-M9/rapture-net_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-mail_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-google-translate_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-net_2.12" type="jar" ext="jar" status="successful" details="" size="219242" time="1154" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/jars/rapture-net_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-net_2.12" type="jar" ext="jar" status="no" details="" size="219242" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/jars/rapture-net_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-net_2.12/2.0.0-M9/rapture-net_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
@@ -690,120 +690,120 @@
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-csv_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132709" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="69">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132709" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="69">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1979" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-csv_2.12/2.0.0-M9/rapture-csv_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3086" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-csv_2.12/2.0.0-M9/rapture-csv_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-csv_2.12" type="jar" ext="jar" status="successful" details="" size="76721" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/jars/rapture-csv_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-csv_2.12" type="jar" ext="jar" status="no" details="" size="76721" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/jars/rapture-csv_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-csv_2.12/2.0.0-M9/rapture-csv_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-fs_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427132549" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427132549" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="70">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1976" time="774" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-fs_2.12/2.0.0-M9/rapture-fs_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3083" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-fs_2.12/2.0.0-M9/rapture-fs_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-csv_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-test_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-cli_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-fs_2.12" type="jar" ext="jar" status="successful" details="" size="36872" time="717" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/jars/rapture-fs_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-fs_2.12" type="jar" ext="jar" status="no" details="" size="36872" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/jars/rapture-fs_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-fs_2.12/2.0.0-M9/rapture-fs_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-io_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427131754" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427131754" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2346" time="817" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-io_2.12/2.0.0-M9/rapture-io_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3391" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-io_2.12/2.0.0-M9/rapture-io_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-fs_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-mail_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-net_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-log_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-io_2.12" type="jar" ext="jar" status="successful" details="" size="359373" time="1640" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/jars/rapture-io_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-io_2.12" type="jar" ext="jar" status="no" details="" size="359373" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/jars/rapture-io_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-io_2.12/2.0.0-M9/rapture-io_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-mime_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427112407" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427112407" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1800" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mime_2.12/2.0.0-M9/rapture-mime_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="2938" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mime_2.12/2.0.0-M9/rapture-mime_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-html_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-io_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-mime_2.12" type="jar" ext="jar" status="successful" details="" size="155727" time="922" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/jars/rapture-mime_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-mime_2.12" type="jar" ext="jar" status="no" details="" size="155727" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/jars/rapture-mime_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-mime_2.12/2.0.0-M9/rapture-mime_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-crypto_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427125618" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427125618" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="2175" time="782" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-crypto_2.12/2.0.0-M9/rapture-crypto_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3251" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-crypto_2.12/2.0.0-M9/rapture-crypto_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-crypto_2.12" type="jar" ext="jar" status="successful" details="" size="53114" time="920" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/jars/rapture-crypto_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-crypto_2.12" type="jar" ext="jar" status="no" details="" size="53114" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/jars/rapture-crypto_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-crypto_2.12/2.0.0-M9/rapture-crypto_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-codec_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427114243" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="67">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427114243" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="67">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1987" time="819" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-codec_2.12/2.0.0-M9/rapture-codec_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3094" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-codec_2.12/2.0.0-M9/rapture-codec_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-crypto_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-io_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-codec_2.12" type="jar" ext="jar" status="successful" details="" size="50510" time="923" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/jars/rapture-codec_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-codec_2.12" type="jar" ext="jar" status="no" details="" size="50510" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/jars/rapture-codec_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-codec_2.12/2.0.0-M9/rapture-codec_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-uri_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427124624" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427124624" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1981" time="693" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-uri_2.12/2.0.0-M9/rapture-uri_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-uri_2.12/2.0.0-M9/rapture-uri_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-io_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-uri_2.12" type="jar" ext="jar" status="successful" details="" size="70944" time="1024" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/jars/rapture-uri_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-uri_2.12" type="jar" ext="jar" status="no" details="" size="70944" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/jars/rapture-uri_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-uri_2.12/2.0.0-M9/rapture-uri_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-time_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427113837" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427113837" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="65">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1984" time="787" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-time_2.12/2.0.0-M9/rapture-time_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-time_2.12/2.0.0-M9/rapture-time_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-http_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-time_2.12" type="jar" ext="jar" status="successful" details="" size="43778" time="789" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/jars/rapture-time_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-time_2.12" type="jar" ext="jar" status="no" details="" size="43778" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/jars/rapture-time_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-time_2.12/2.0.0-M9/rapture-time_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-core_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427113009" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427113009" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1984" time="820" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core_2.12/2.0.0-M9/rapture-core_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core_2.12/2.0.0-M9/rapture-core_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture-dom_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-text_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-i18n_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
@@ -817,20 +817,20 @@
 				<caller organisation="com.propensive" name="rapture-time_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-google-translate_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-core_2.12" type="jar" ext="jar" status="successful" details="" size="389783" time="2486" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/jars/rapture-core_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-core_2.12" type="jar" ext="jar" status="no" details="" size="389783" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/jars/rapture-core_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-core_2.12/2.0.0-M9/rapture-core_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>
 		</module>
 		<module organisation="com.propensive" name="rapture-base_2.12">
-			<revision name="2.0.0-M9" status="release" pubdate="20170427112338" resolver="public" artresolver="public" homepage="http://rapture.io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="63">
+			<revision name="2.0.0-M9" status="release" pubdate="20170427112338" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://rapture.io/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="63">
 				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
-				<metadata-artifact status="successful" details="" size="1800" time="816" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/ivy-2.0.0-M9.xml" searched="true" original-local-location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/ivy-2.0.0-M9.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-base_2.12/2.0.0-M9/rapture-base_2.12-2.0.0-M9.pom"/>
+				<metadata-artifact status="no" details="" size="2938" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-base_2.12/2.0.0-M9/rapture-base_2.12-2.0.0-M9.pom"/>
 				<caller organisation="com.propensive" name="rapture_2.12" conf="default, compile, runtime, master" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<caller organisation="com.propensive" name="rapture-core_2.12" conf="compile, runtime" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="2.0.0-M9"/>
 				<artifacts>
-					<artifact name="rapture-base_2.12" type="jar" ext="jar" status="successful" details="" size="6571" time="797" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/jars/rapture-base_2.12-2.0.0-M9.jar">
+					<artifact name="rapture-base_2.12" type="jar" ext="jar" status="no" details="" size="6571" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/jars/rapture-base_2.12-2.0.0-M9.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-base_2.12/2.0.0-M9/rapture-base_2.12-2.0.0-M9.jar"/>
 					</artifact>
 				</artifacts>

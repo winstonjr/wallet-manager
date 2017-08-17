@@ -7,7 +7,7 @@
 		revision="1.0.0.0"
 		conf="test-internal"
 		confs="universal, universal-docs, universal-src, compile, runtime, test, provided, optional, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20170817072053"/>
+		date="20170817073737"/>
 	<dependencies>
 		<module organisation="org.scalatestplus.play" name="scalatestplus-play_2.12">
 			<revision name="3.1.0" status="release" pubdate="20170706173112" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/playframework/scalatestplus-play" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="129">
@@ -1523,7 +1523,7 @@
 				<metadata-artifact status="no" details="" size="7704" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture_2.12/2.0.0-M9/rapture_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="256" time="1025" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/srcs/rapture_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="256" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture_2.12/srcs/rapture_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture_2.12/2.0.0-M9/rapture_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1535,7 +1535,7 @@
 				<metadata-artifact status="no" details="" size="3118" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-java8-support_2.12/2.0.0-M9/rapture-java8-support_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-java8-support_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="1608" time="1083" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/srcs/rapture-java8-support_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-java8-support_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1608" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-java8-support_2.12/srcs/rapture-java8-support_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-java8-support_2.12/2.0.0-M9/rapture-java8-support_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1547,7 +1547,7 @@
 				<metadata-artifact status="no" details="" size="3259" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http-json_2.12/2.0.0-M9/rapture-http-json_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-http-json_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="1342" time="1025" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/srcs/rapture-http-json_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-http-json_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1342" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http-json_2.12/srcs/rapture-http-json_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-http-json_2.12/2.0.0-M9/rapture-http-json_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1559,7 +1559,7 @@
 				<metadata-artifact status="no" details="" size="3408" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core-scalaz_2.12/2.0.0-M9/rapture-core-scalaz_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-core-scalaz_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2926" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/srcs/rapture-core-scalaz_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-core-scalaz_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2926" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core-scalaz_2.12/srcs/rapture-core-scalaz_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-core-scalaz_2.12/2.0.0-M9/rapture-core-scalaz_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1571,7 +1571,7 @@
 				<metadata-artifact status="no" details="" size="2949" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.12/7.2.8/scalaz-concurrent_2.12-7.2.8.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="scalaz-concurrent_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="20456" time="1023" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/srcs/scalaz-concurrent_2.12-7.2.8-sources.jar">
+					<artifact name="scalaz-concurrent_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="20456" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-concurrent_2.12/srcs/scalaz-concurrent_2.12-7.2.8-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.12/7.2.8/scalaz-concurrent_2.12-7.2.8-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1583,7 +1583,7 @@
 				<metadata-artifact status="no" details="" size="2790" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.12/7.2.8/scalaz-effect_2.12-7.2.8.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="scalaz-effect_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="22586" time="762" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/srcs/scalaz-effect_2.12-7.2.8-sources.jar">
+					<artifact name="scalaz-effect_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="22586" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-effect_2.12/srcs/scalaz-effect_2.12-7.2.8-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.12/7.2.8/scalaz-effect_2.12-7.2.8-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1595,7 +1595,7 @@
 				<metadata-artifact status="no" details="" size="2639" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/ivy-7.2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.8/scalaz-core_2.12-7.2.8.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="7.2.8" rev-constraint-default="7.2.8" rev-constraint-dynamic="7.2.8" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="scalaz-core_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="366624" time="1025" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/srcs/scalaz-core_2.12-7.2.8-sources.jar">
+					<artifact name="scalaz-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="366624" time="0" location="/home/winston/.ivy2/cache/org.scalaz/scalaz-core_2.12/srcs/scalaz-core_2.12-7.2.8-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.12/7.2.8/scalaz-core_2.12-7.2.8-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1607,7 +1607,7 @@
 				<metadata-artifact status="no" details="" size="3103" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-currency_2.12/2.0.0-M9/rapture-currency_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-currency_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3845" time="1105" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/srcs/rapture-currency_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-currency_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3845" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-currency_2.12/srcs/rapture-currency_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-currency_2.12/2.0.0-M9/rapture-currency_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1619,7 +1619,7 @@
 				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-xml_2.12/2.0.0-M9/rapture-xml_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-xml_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="11666" time="1126" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/srcs/rapture-xml_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-xml_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="11666" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-xml_2.12/srcs/rapture-xml_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-xml_2.12/2.0.0-M9/rapture-xml_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1631,7 +1631,7 @@
 				<metadata-artifact status="no" details="" size="3246" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-latex_2.12/2.0.0-M9/rapture-latex_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-latex_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2281" time="1054" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/srcs/rapture-latex_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-latex_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2281" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-latex_2.12/srcs/rapture-latex_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-latex_2.12/2.0.0-M9/rapture-latex_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1643,7 +1643,7 @@
 				<metadata-artifact status="no" details="" size="3590" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-google-translate_2.12/2.0.0-M9/rapture-google-translate_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-google-translate_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2344" time="1022" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/srcs/rapture-google-translate_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-google-translate_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2344" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-google-translate_2.12/srcs/rapture-google-translate_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-google-translate_2.12/2.0.0-M9/rapture-google-translate_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1655,7 +1655,7 @@
 				<metadata-artifact status="no" details="" size="3403" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json-jawn_2.12/2.0.0-M9/rapture-json-jawn_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-json-jawn_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="5285" time="1025" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/srcs/rapture-json-jawn_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-json-jawn_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="5285" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json-jawn_2.12/srcs/rapture-json-jawn_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-json-jawn_2.12/2.0.0-M9/rapture-json-jawn_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1667,7 +1667,7 @@
 				<metadata-artifact status="no" details="" size="3020" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/ivy-0.10.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-ast_2.12/0.10.4/jawn-ast_2.12-0.10.4.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="0.10.4" rev-constraint-default="0.10.4" rev-constraint-dynamic="0.10.4" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="jawn-ast_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="4551" time="1021" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/srcs/jawn-ast_2.12-0.10.4-sources.jar">
+					<artifact name="jawn-ast_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4551" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-ast_2.12/srcs/jawn-ast_2.12-0.10.4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/spire-math/jawn-ast_2.12/0.10.4/jawn-ast_2.12-0.10.4-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1679,7 +1679,7 @@
 				<metadata-artifact status="no" details="" size="3525" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mail_2.12/2.0.0-M9/rapture-mail_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-mail_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="6178" time="1024" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/srcs/rapture-mail_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-mail_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6178" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mail_2.12/srcs/rapture-mail_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-mail_2.12/2.0.0-M9/rapture-mail_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1715,7 +1715,7 @@
 				<metadata-artifact status="no" details="" size="4430" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-http_2.12/2.0.0-M9/rapture-http_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-http_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="15615" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/srcs/rapture-http_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-http_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="15615" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-http_2.12/srcs/rapture-http_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-http_2.12/2.0.0-M9/rapture-http_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1738,7 +1738,7 @@
 				<metadata-artifact status="no" details="" size="3851" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-html_2.12/2.0.0-M9/rapture-html_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-html_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="7897" time="911" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/srcs/rapture-html_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-html_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7897" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-html_2.12/srcs/rapture-html_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-html_2.12/2.0.0-M9/rapture-html_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1750,7 +1750,7 @@
 				<metadata-artifact status="no" details="" size="3394" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-css_2.12/2.0.0-M9/rapture-css_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-css_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="8612" time="1022" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/srcs/rapture-css_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-css_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="8612" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-css_2.12/srcs/rapture-css_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-css_2.12/2.0.0-M9/rapture-css_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1774,7 +1774,7 @@
 				<metadata-artifact status="no" details="" size="3085" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-js_2.12/2.0.0-M9/rapture-js_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-js_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3989" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/srcs/rapture-js_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-js_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3989" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-js_2.12/srcs/rapture-js_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-js_2.12/2.0.0-M9/rapture-js_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1786,7 +1786,7 @@
 				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-dom_2.12/2.0.0-M9/rapture-dom_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-dom_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="5556" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/srcs/rapture-dom_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-dom_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="5556" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-dom_2.12/srcs/rapture-dom_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-dom_2.12/2.0.0-M9/rapture-dom_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1798,7 +1798,7 @@
 				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-json_2.12/2.0.0-M9/rapture-json_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-json_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="14882" time="1024" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/srcs/rapture-json_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-json_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="14882" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-json_2.12/srcs/rapture-json_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-json_2.12/2.0.0-M9/rapture-json_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1810,7 +1810,7 @@
 				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-data_2.12/2.0.0-M9/rapture-data_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-data_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="14946" time="1021" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/srcs/rapture-data_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-data_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="14946" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-data_2.12/srcs/rapture-data_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-data_2.12/2.0.0-M9/rapture-data_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1822,7 +1822,7 @@
 				<metadata-artifact status="no" details="" size="3225" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-net_2.12/2.0.0-M9/rapture-net_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-net_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="18309" time="1020" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/srcs/rapture-net_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-net_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18309" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-net_2.12/srcs/rapture-net_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-net_2.12/2.0.0-M9/rapture-net_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1846,7 +1846,7 @@
 				<metadata-artifact status="no" details="" size="3086" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-csv_2.12/2.0.0-M9/rapture-csv_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-csv_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3640" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/srcs/rapture-csv_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-csv_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3640" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-csv_2.12/srcs/rapture-csv_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-csv_2.12/2.0.0-M9/rapture-csv_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1858,7 +1858,7 @@
 				<metadata-artifact status="no" details="" size="3251" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-crypto_2.12/2.0.0-M9/rapture-crypto_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-crypto_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="4041" time="1144" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/srcs/rapture-crypto_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-crypto_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4041" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-crypto_2.12/srcs/rapture-crypto_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-crypto_2.12/2.0.0-M9/rapture-crypto_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1870,7 +1870,7 @@
 				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-time_2.12/2.0.0-M9/rapture-time_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-time_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2406" time="1330" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/srcs/rapture-time_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-time_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2406" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-time_2.12/srcs/rapture-time_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-time_2.12/2.0.0-M9/rapture-time_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1882,7 +1882,7 @@
 				<metadata-artifact status="no" details="" size="2879" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/ivy-0.10.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/spire-math/jawn-parser_2.12/0.10.4/jawn-parser_2.12-0.10.4.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="0.10.4" rev-constraint-default="0.10.4" rev-constraint-dynamic="0.10.4" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="jawn-parser_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="18474" time="1023" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/srcs/jawn-parser_2.12-0.10.4-sources.jar">
+					<artifact name="jawn-parser_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18474" time="0" location="/home/winston/.ivy2/cache/org.spire-math/jawn-parser_2.12/srcs/jawn-parser_2.12-0.10.4-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/spire-math/jawn-parser_2.12/0.10.4/jawn-parser_2.12-0.10.4-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1894,7 +1894,7 @@
 				<metadata-artifact status="no" details="" size="3244" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-i18n_2.12/2.0.0-M9/rapture-i18n_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-i18n_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="8360" time="1526" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/srcs/rapture-i18n_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-i18n_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="8360" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-i18n_2.12/srcs/rapture-i18n_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-i18n_2.12/2.0.0-M9/rapture-i18n_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1906,7 +1906,7 @@
 				<metadata-artifact status="no" details="" size="3540" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-test_2.12/2.0.0-M9/rapture-test_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-test_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="6944" time="1331" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/srcs/rapture-test_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-test_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6944" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-test_2.12/srcs/rapture-test_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-test_2.12/2.0.0-M9/rapture-test_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1930,7 +1930,7 @@
 				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-text_2.12/2.0.0-M9/rapture-text_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-text_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2312" time="914" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/srcs/rapture-text_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-text_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2312" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-text_2.12/srcs/rapture-text_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-text_2.12/2.0.0-M9/rapture-text_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1942,7 +1942,7 @@
 				<metadata-artifact status="no" details="" size="3238" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-cli_2.12/2.0.0-M9/rapture-cli_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-cli_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="16840" time="1124" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/srcs/rapture-cli_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-cli_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="16840" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-cli_2.12/srcs/rapture-cli_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-cli_2.12/2.0.0-M9/rapture-cli_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1954,7 +1954,7 @@
 				<metadata-artifact status="no" details="" size="3083" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-fs_2.12/2.0.0-M9/rapture-fs_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-fs_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3842" time="1125" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/srcs/rapture-fs_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-fs_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3842" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-fs_2.12/srcs/rapture-fs_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-fs_2.12/2.0.0-M9/rapture-fs_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1966,7 +1966,7 @@
 				<metadata-artifact status="no" details="" size="3086" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-log_2.12/2.0.0-M9/rapture-log_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-log_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="4753" time="1025" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/srcs/rapture-log_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-log_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4753" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-log_2.12/srcs/rapture-log_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-log_2.12/2.0.0-M9/rapture-log_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1978,7 +1978,7 @@
 				<metadata-artifact status="no" details="" size="3391" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-io_2.12/2.0.0-M9/rapture-io_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-io_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="18290" time="1018" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/srcs/rapture-io_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-io_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18290" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-io_2.12/srcs/rapture-io_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-io_2.12/2.0.0-M9/rapture-io_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -1990,7 +1990,7 @@
 				<metadata-artifact status="no" details="" size="3088" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-uri_2.12/2.0.0-M9/rapture-uri_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-uri_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="6866" time="1023" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/srcs/rapture-uri_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-uri_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6866" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-uri_2.12/srcs/rapture-uri_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-uri_2.12/2.0.0-M9/rapture-uri_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -2002,7 +2002,7 @@
 				<metadata-artifact status="no" details="" size="2938" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-mime_2.12/2.0.0-M9/rapture-mime_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-mime_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="18420" time="1021" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/srcs/rapture-mime_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-mime_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18420" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-mime_2.12/srcs/rapture-mime_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-mime_2.12/2.0.0-M9/rapture-mime_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -2014,7 +2014,7 @@
 				<metadata-artifact status="no" details="" size="3094" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-codec_2.12/2.0.0-M9/rapture-codec_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-codec_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="5757" time="1025" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/srcs/rapture-codec_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-codec_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="5757" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-codec_2.12/srcs/rapture-codec_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-codec_2.12/2.0.0-M9/rapture-codec_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -2026,7 +2026,7 @@
 				<metadata-artifact status="no" details="" size="3091" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-core_2.12/2.0.0-M9/rapture-core_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-core_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="23901" time="1024" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/srcs/rapture-core_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="23901" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-core_2.12/srcs/rapture-core_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-core_2.12/2.0.0-M9/rapture-core_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
@@ -2038,7 +2038,7 @@
 				<metadata-artifact status="no" details="" size="2938" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/ivy-2.0.0-M9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/propensive/rapture-base_2.12/2.0.0-M9/rapture-base_2.12-2.0.0-M9.pom"/>
 				<caller organisation="io.atleastonce" name="wallet-manager$sources_2.12" conf="test, compile, provided, test-internal, runtime, optional" rev="2.0.0-M9" rev-constraint-default="2.0.0-M9" rev-constraint-dynamic="2.0.0-M9" callerrev="1.0.0.0"/>
 				<artifacts>
-					<artifact name="rapture-base_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="1852" time="1022" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/srcs/rapture-base_2.12-2.0.0-M9-sources.jar">
+					<artifact name="rapture-base_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1852" time="0" location="/home/winston/.ivy2/cache/com.propensive/rapture-base_2.12/srcs/rapture-base_2.12-2.0.0-M9-sources.jar">
 						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/propensive/rapture-base_2.12/2.0.0-M9/rapture-base_2.12-2.0.0-M9-sources.jar"/>
 					</artifact>
 				</artifacts>
