@@ -1,0 +1,16 @@
+run
+products
+run
+sbt -jvm-debug 5069
+sbt --jvm-debug 5069
+sbt
+run
+reload
+updade
+update
+clean
+run
+reload
+update
+clean
+run
