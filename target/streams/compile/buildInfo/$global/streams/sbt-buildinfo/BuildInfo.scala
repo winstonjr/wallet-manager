@@ -12,10 +12,10 @@ case object BuildInfo {
   val scalaVersion: String = "2.12.2"
   /** The value is "version := \"1.0.0.0\"\n". */
   val versionFile: String = "version := \"1.0.0.0\"\n"
-  /** The value is "2017-08-15 22:04:05.204". */
-  val builtAtString: String = "2017-08-15 22:04:05.204"
-  /** The value is 1502834645204L. */
-  val builtAtMillis: scala.Long = 1502834645204L
+  /** The value is "2017-08-17 10:47:56.945". */
+  val builtAtString: String = "2017-08-17 10:47:56.945"
+  /** The value is 1502966876945L. */
+  val builtAtMillis: scala.Long = 1502966876945L
   override val toString: String = {
     "name: %s, version: %s, scalaVersion: %s, versionFile: %s, builtAtString: %s, builtAtMillis: %s" format (
       name, version, scalaVersion, versionFile, builtAtString, builtAtMillis
