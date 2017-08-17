@@ -18,6 +18,7 @@ server.pid
 *.eml
 /dist/
 .cache
+target/
 
 # User-specific stuff:
 .idea/
