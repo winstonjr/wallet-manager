@@ -3,7 +3,7 @@ package io.atleastonce.wallet.manager.domain
 import org.scalatestplus.play._
 
 class UserSpec extends PlaySpec {
-  "User" should {
+  "User creation" should {
     "throws an Error if id is null" in {
       a [IllegalArgumentException] must be thrownBy {
         User(null, "n1", "756fd927-4344-468c-b678-abf2ff4c2155", "sak1")
@@ -72,8 +72,10 @@ class UserSpec extends PlaySpec {
       user.accessKey mustBe "756fd927-4344-468c-b678-abf2ff4c2155"
       user.secretAccessKey mustBe "lala"
     }
+  }
 
-    "must add a wallet in a user correctly" in {
+  "An user" should {
+    "add a wallet in a user correctly" in {
       val user = User("e79cf53a-eb49-449e-91e6-afa6a0831ea4", "n1", "756fd927-4344-468c-b678-abf2ff4c2155", "lala")
       val wallet = Wallet("c92c894a-7c02-4ac0-bab9-34b739274471", 1000F)
 
@@ -85,8 +87,10 @@ class UserSpec extends PlaySpec {
         case _ =>
       }
     }
+  }
 
-    "should generate a sha-256 hash" in {
+  "As an auxiliary method an user" should {
+    "generate a sha-256 hash" in {
       val hash = User.generateSecretKey
 
       hash.length mustBe 64
