@@ -14,4 +14,17 @@ object Data {
     users = users :+ user
     user
   }
+
+  def getAllUsers: List[User] = {
+    users
+  }
+
+  def removeUser(user: User) = {
+    this.users = users diff List(user)
+  }
+
+  def updateUser(oldUser: User, user: User) = {
+    this.removeUser(oldUser)
+    this.addUser(user)
+  }
 }

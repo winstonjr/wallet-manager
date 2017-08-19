@@ -9,4 +9,4 @@ GET     /                           controllers.StatusController.probe
 GET     /users                      io.atleastonce.wallet.manager.controllers.UserController.getAll
 GET     /users/:id                  io.atleastonce.wallet.manager.controllers.UserController.findById(id)
 POST    /users                      io.atleastonce.wallet.manager.controllers.UserController.createUser
-PUT     /users                      io.atleastonce.wallet.manager.controllers.UserController.updateUser
+PUT     /users/:id                  io.atleastonce.wallet.manager.controllers.UserController.updateUser(id)

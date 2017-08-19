@@ -1,7 +1,6 @@
 package io.atleastonce.wallet.manager.domain
 
 case class Wallet(id: String,
-                  user: User,
                   credit: Float,
                   cards: List[CreditCard] = List.empty) {
   /**
