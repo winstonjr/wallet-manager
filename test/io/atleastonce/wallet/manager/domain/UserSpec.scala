@@ -85,5 +85,11 @@ class UserSpec extends PlaySpec {
         case _ =>
       }
     }
+
+    "should generate a sha-256 hash" in {
+      val hash = User.generateSecretKey
+
+      hash.length mustBe 64
+    }
   }
 }
