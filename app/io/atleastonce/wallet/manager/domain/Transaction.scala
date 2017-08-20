@@ -2,19 +2,18 @@ package io.atleastonce.wallet.manager.domain
 
 import java.time.LocalDateTime
 
-class Transaction(operation: String,
+abstract class Transaction(operation: String,
                        value: Float,
                        date: LocalDateTime) {
-  def getValueWithSignal: Float = {
-    operation match {
-      case "payment" => value * (-1)
-      case _ => value
-    }
-  }
+  def getValueWithSignal: Float
 }
 
 case class PaymentTransaction(value: Float,
-                              date: LocalDateTime) extends Transaction("payment", value, date)
+                              date: LocalDateTime) extends Transaction("payment", value, date) {
+  override def getValueWithSignal: Float = value * (-1)
+}
 
 case class DebitTransaction(value: Float,
-                            date: LocalDateTime) extends Transaction("debit", value, date)
+                            date: LocalDateTime) extends Transaction("debit", value, date) {
+  override def getValueWithSignal: Float = value
+}
