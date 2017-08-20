@@ -3,6 +3,14 @@ package io.atleastonce.wallet.manager.domain
 case class Wallet(id: String,
                   credit: Float,
                   cards: List[CreditCard] = List.empty) {
+
+  private val uuidReg = "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$".r
+  require(null != id && id.nonEmpty, "id é obrigatório")
+  require(uuidReg.findFirstIn(id).isDefined, "id deve ser um UUID")
+  require(credit >= 0F, "O valor mínimo da carteira é 0")
+  assume(credit <= this.getMaximumLimit,
+    "O limite máximo de um cartão de uma carteira não pode ultrapassar a soma dos limites dos cartões")
+
   /**
     * Método responsável por calcular o limite máximo de uma carteira
     * - The maximum limit of a wallet must be the sum of all its cards
@@ -64,8 +72,7 @@ case class Wallet(id: String,
     * by the user, maximum limit and available credit)
     */
   def getAvailableCredit: Float = {
-    val totalExpenses = cards.map(_.getAvailableCredit).sum
-    this.credit - totalExpenses
+    cards.map(_.getAvailableCredit).sum
   }
 
   /**
@@ -87,12 +94,12 @@ case class Wallet(id: String,
   }
 
   private def removalAllowed(card: CreditCard): Either[Wallet, Throwable] = {
-    val newWallet = removeCardFromList(card)
-    if (this.credit < newWallet.getMaximumLimit) {
+    if (this.credit > (this.getMaximumLimit - card.credit)) {
       Right(new Error("Não é possível remover o cartão no momento." +
         " Primeiro reduza o limite de crédito da carteira"))
     } else {
       // TODO: Remover o cartão do banco de dados.
+      val newWallet = removeCardFromList(card)
       Left(newWallet)
     }
   }

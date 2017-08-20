@@ -9,7 +9,7 @@ case class CreditCard(id: String,
                       expirationDate: LocalDateTime,
                       credit: Float,
                       removed: Option[Boolean] = Some(false),
-                      transactions: List[Transaction]) {
+                      transactions: List[Transaction] = List.empty) {
   /**
     * Método responsável por calcular o crédito consolidado disponível no cartão
     * - - The user must be able to access all the information of his/her wallet at any time (limit set
