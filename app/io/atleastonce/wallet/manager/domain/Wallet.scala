@@ -1,5 +1,7 @@
 package io.atleastonce.wallet.manager.domain
 
+import java.time.ZoneOffset
+
 case class Wallet(id: String,
                   credit: Float,
                   cards: List[CreditCard] = List.empty) {
@@ -87,10 +89,31 @@ case class Wallet(id: String,
     *
     * @return Melhor cartão de crédito para a compra
     */
-  def selectBestCreditCard(): Boolean = {
-    // TODO: Tudo =D
+  def selectBestCreditCard(value: Float): Either[List[CreditCard], Throwable] = {
+    // Não possui crédito para a compra
+    if (value > this.getAvailableCredit) {
+      Right(new Error("O valor da compra é maior que o crédito disponível na carteira"))
+    } else {
+      // cartões que possuem crédito para a compra single shot
+      var f1 = this.cards.filter(_.getAvailableCredit >= value)
+        .sortWith((cc1, cc2) => getFarthestDueDateCard(cc1.getDueDateMillis, cc2.getDueDateMillis)
+          && lowerCredit(cc1.credit, cc2.credit))
 
-    true
+      if (f1.nonEmpty) {
+        Left(List(f1.head))
+      } else {
+        // será necessário mais de um cartão para realizar a compra
+        Right(new Error("deu ruim"))
+      }
+    }
+  }
+
+  private def lowerCredit(credit1: Float, credit2: Float): Boolean = {
+    credit1 < credit2
+  }
+
+  private def getFarthestDueDateCard(dueDate1: Long, dueDate2: Long): Boolean = {
+    dueDate1 > dueDate2
   }
 
   private def removalAllowed(card: CreditCard): Either[Wallet, Throwable] = {

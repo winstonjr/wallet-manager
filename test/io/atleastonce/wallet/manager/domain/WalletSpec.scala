@@ -187,5 +187,38 @@ class WalletSpec extends PlaySpec {
 
       wallet.getAvailableCredit mustBe 800F
     }
+
+    "could not select credit cards for buy if the ammount is bigger than all available limit" in {
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+        15, LocalDateTime.now().plusYears(5L), 500F,
+        transactions = List(DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+        15, LocalDateTime.now().plusYears(5L), 500F,
+        transactions = List(DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
+      val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
+
+      wallet.selectBestCreditCard(801) match {
+        case Right(error) =>
+          error.getMessage mustBe "O valor da compra é maior que o crédito disponível na carteira"
+        case _ =>
+      }
+    }
+
+    "select the card with lower limit and farthest due date" in {
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+        LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+        LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+        LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+      val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1500F, List(cc1, cc2, cc3))
+
+      wallet.selectBestCreditCard(500F) match {
+        case Left(cc) =>
+          cc.head.credit mustBe 700F
+          cc.head.number mustBe "1234123412341234"
+        case _ =>
+      }
+    }
   }
 }

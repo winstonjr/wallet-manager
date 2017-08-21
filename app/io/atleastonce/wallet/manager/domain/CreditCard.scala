@@ -1,6 +1,6 @@
 package io.atleastonce.wallet.manager.domain
 
-import java.time.LocalDateTime
+import java.time.{LocalDateTime, ZoneOffset}
 
 case class CreditCard(id: String,
                       number: String,
@@ -57,6 +57,20 @@ case class CreditCard(id: String,
   def AddCredits(transaction: DebitTransaction): CreditCard = {
     val newTransactionList = transactions :+ transaction
     this.copy(transactions = newTransactionList)
+  }
+
+  def getDueDate: LocalDateTime = {
+    val now = LocalDateTime.now
+
+    if (this.dueDate < now.getDayOfMonth) {
+      LocalDateTime.of(now.getYear, now.getMonthValue + 1, this.dueDate, 0, 0, 0)
+    } else {
+      LocalDateTime.of(now.getYear, now.getMonthValue, this.dueDate, 0, 0, 0)
+    }
+  }
+
+  def getDueDateMillis: Long = {
+    this.getDueDate.toInstant(ZoneOffset.UTC).toEpochMilli
   }
 
   private def isCreditAvailableForTransaction(value: Float): Boolean = {
