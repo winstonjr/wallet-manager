@@ -8,7 +8,7 @@ case class CreditCard(id: String,
                       dueDate: Int,
                       expirationDate: LocalDateTime,
                       credit: Float,
-                      removed: Option[Boolean] = Some(false),
+                      removed: Boolean = false,
                       transactions: List[Transaction] = List.empty) {
   private val uuidReg = "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$".r
   private val ccReg = "^[0-9]{16}$".r
@@ -19,7 +19,7 @@ case class CreditCard(id: String,
   require(null != number && number.nonEmpty, "number é obrigatório")
   require(ccReg.findFirstIn(number).isDefined, "número do cartão de crédito deve possuir 16 caracteres numéricos")
   require(null != cvv && cvv.nonEmpty, "cvv é obrigatório")
-  require(ccReg.findFirstIn(number).isDefined, "cvv do cartão de crédito deve possuir 3 caracteres numéricos")
+  require(cvvReg.findFirstIn(cvv).isDefined, "cvv do cartão de crédito deve possuir 3 caracteres numéricos")
   require(dueDate > 0 && dueDate < 29, "Vencimento do cartão deve ser entre os dias 1 e 28 do mês")
   require(this.getExpiration.isAfter(CreditCard.getExpiration(date)), "Não é possível adicionar um cartão expirado")
   require(credit > 0F, "o crédito do cartão deve ser maior que 0")
