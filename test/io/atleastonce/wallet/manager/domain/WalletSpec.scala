@@ -41,7 +41,7 @@ class WalletSpec extends PlaySpec {
         Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 100.001F, List(CreditCard(
           "5febb7b0-4082-4138-aced-7189e1cc464a",
           "1234123412341234",
-          123,
+          "123",
           15,
           LocalDateTime.now().plusYears(5L),
           100F
@@ -60,7 +60,7 @@ class WalletSpec extends PlaySpec {
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1000F,  List(CreditCard(
         "5febb7b0-4082-4138-aced-7189e1cc464a",
         "1234123412341234",
-        123,
+        "123",
         15,
         LocalDateTime.now().plusYears(5L),
         1001F
@@ -73,7 +73,7 @@ class WalletSpec extends PlaySpec {
 
   "A wallet" should {
     "be created with one credit card" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 1001F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1000F, List(cc1))
 
@@ -83,7 +83,7 @@ class WalletSpec extends PlaySpec {
     }
 
     "be created without credit card and then add one" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 1001F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 0F)
       wallet.addCard(cc1) match {
@@ -96,9 +96,9 @@ class WalletSpec extends PlaySpec {
     }
 
     "have the maximum limit as result of all credit cards available" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "1234123412341234", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 0F, List(cc1, cc2))
 
@@ -106,9 +106,9 @@ class WalletSpec extends PlaySpec {
     }
 
     "return an error if a new limit set above maximum limit of the wallet" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "1234123412341234", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1000F, List(cc1, cc2))
 
@@ -120,22 +120,23 @@ class WalletSpec extends PlaySpec {
     }
 
     "works properly if the new limit is bellow maximum limit" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1000F, List(cc1, cc2))
 
       wallet.updateLimit(900F) match {
         case Left(newWallet) =>
           newWallet.credit mustBe 900F
+        case _ =>
       }
     }
 
     "return an error if the credit card does not exist" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
 
@@ -148,9 +149,9 @@ class WalletSpec extends PlaySpec {
     }
 
     "return an error if the limit of credit is greater than maximum limit" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1000F, List(cc1, cc2))
 
@@ -163,9 +164,9 @@ class WalletSpec extends PlaySpec {
     }
 
     "works properly if the card exists" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
 
@@ -177,10 +178,10 @@ class WalletSpec extends PlaySpec {
     }
 
     "have the right limit when transactions are defined" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
@@ -189,10 +190,10 @@ class WalletSpec extends PlaySpec {
     }
 
     "could not select credit cards for buy if the ammount is bigger than all available limit" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
@@ -205,11 +206,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select the card with lower limit and farthest due date" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1500F, List(cc1, cc2, cc3))
 
@@ -222,11 +223,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 2 credit cards for the payment with lower limit and farthest due date" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1500F, List(cc1, cc2, cc3))
 
@@ -242,11 +243,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 3 credit cards for the payment with lower limit and farthest due date" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 2200F, List(cc1, cc2, cc3))
 
@@ -265,13 +266,13 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 3 credit cards for the payment lower limit and farthest due date" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F,
         transactions = List(PaymentTransaction(50F, LocalDateTime.now)))
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(PaymentTransaction(100F, LocalDateTime.now)))
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 2200F, List(cc1, cc2, cc3))
 
@@ -290,10 +291,10 @@ class WalletSpec extends PlaySpec {
     }
 
     "could not generate transactions if the ammount is bigger than all available limit" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
         transactions = List(DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
@@ -306,11 +307,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select one card with lower limit and farthest due date" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1500F, List(cc1, cc2, cc3))
 
@@ -324,11 +325,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 2 credit cards for the payment with 700 in one and 301 in another transaction" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 1500F, List(cc1, cc2, cc3))
 
@@ -346,11 +347,11 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 3 credit cards for the payment with transactions of 700, 1000 and 300" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F)
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 2200F, List(cc1, cc2, cc3))
 
@@ -372,12 +373,12 @@ class WalletSpec extends PlaySpec {
     }
 
     "select 3 credit cards for the payment with transactions of 650, 900 and 450" in {
-      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", 123,
+      val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 700F,
         transactions = List(DebitTransaction(50F, LocalDateTime.now)))
-      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", 123,
+      val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         LocalDateTime.now.plusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 500F)
-      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", 123,
+      val cc3 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
         LocalDateTime.now.minusDays(2).getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F,
         transactions = List(DebitTransaction(100F, LocalDateTime.now)))
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 2200F, List(cc1, cc2, cc3))

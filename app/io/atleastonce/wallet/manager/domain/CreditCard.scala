@@ -4,12 +4,19 @@ import java.time.{LocalDateTime, ZoneOffset}
 
 case class CreditCard(id: String,
                       number: String,
-                      cvv: Int,
+                      cvv: String,
                       dueDate: Int,
                       expirationDate: LocalDateTime,
                       credit: Float,
                       removed: Option[Boolean] = Some(false),
                       transactions: List[Transaction] = List.empty) {
+  private val uuidReg = "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$".r
+  require(null != id && id.nonEmpty, "id é obrigatório")
+  require(uuidReg.findFirstIn(id).isDefined, "id deve ser um UUID")
+  require(null != number && number.nonEmpty, "number é obrigatório")
+  require(16.equals(number.length))
+
+
   /**
     * Método responsável por calcular o crédito consolidado disponível no cartão
     * - - The user must be able to access all the information of his/her wallet at any time (limit set
