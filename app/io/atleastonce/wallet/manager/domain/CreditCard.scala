@@ -21,9 +21,7 @@ case class CreditCard(id: String,
   require(null != cvv && cvv.nonEmpty, "cvv é obrigatório")
   require(ccReg.findFirstIn(number).isDefined, "cvv do cartão de crédito deve possuir 3 caracteres numéricos")
   require(dueDate > 0 && dueDate < 29, "Vencimento do cartão deve ser entre os dias 1 e 28 do mês")
-  require(expirationDate.isAfter(
-    LocalDateTime.of(date.getYear, date.getMonthValue, date.getDayOfMonth + 1, 0, 0, 0)),
-    "A data de expiração deve ser maior ou igual a amanhã")
+  require(this.getExpiration.isAfter(CreditCard.getExpiration(date)), "Não é possível adicionar um cartão expirado")
   require(credit > 0F, "o crédito do cartão deve ser maior que 0")
 
   /**
@@ -89,5 +87,15 @@ case class CreditCard(id: String,
   private def isCreditAvailableForTransaction(value: Float): Boolean = {
     // TODO: Buscar informações atualizadas no banco
     value <= this.getAvailableCredit
+  }
+
+  private def getExpiration: LocalDateTime = {
+    CreditCard.getExpiration(this.expirationDate)
+  }
+}
+
+object CreditCard {
+  def getExpiration(date: LocalDateTime) = {
+    LocalDateTime.of(date.getYear, date.getMonthValue, 1, 0, 0, 0, 0)
   }
 }
