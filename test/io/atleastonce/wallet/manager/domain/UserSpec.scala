@@ -77,13 +77,13 @@ class UserSpec extends PlaySpec {
   "An user" should {
     "add a wallet in a user correctly" in {
       val user = User("e79cf53a-eb49-449e-91e6-afa6a0831ea4", "n1", "756fd927-4344-468c-b678-abf2ff4c2155", "lala")
-      val wallet = Wallet("c92c894a-7c02-4ac0-bab9-34b739274471", 1000F)
+      val wallet = Wallet("c92c894a-7c02-4ac0-bab9-34b739274471", 0F)
 
       user.addWallet(wallet) match {
         case Left(newUser) =>
           newUser.wallets.length mustBe 1
           newUser.wallets.head.id mustBe "c92c894a-7c02-4ac0-bab9-34b739274471"
-          newUser.wallets.head.credit mustBe 1000F
+          newUser.wallets.head.credit mustBe 0F
         case _ =>
       }
     }

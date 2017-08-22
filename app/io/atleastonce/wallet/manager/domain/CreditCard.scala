@@ -25,30 +25,6 @@ case class CreditCard(id: String,
   }
 
   /**
-    * Método responsável por receber uma compra de um cartão.
-    * - Have the necessary properties to execute a purchase (number, due date,
-    * expiration date, cvv and limit).
-    *
-    * @param transaction transação que está sendo realizada
-    * @return O cartão de crédito com a nova transação ou uma mensagem informando que não é possível
-    *         realizar a transação.
-    */
-  def purchase(transaction: DebitTransaction): Either[CreditCard, Throwable] = {
-    if (this.expirationDate.isAfter(transaction.date)) {
-      if (isCreditAvailableForTransaction(transaction.value)) {
-        val newTransactionList = transactions :+ transaction
-        Left(this.copy(transactions = newTransactionList))
-      } else {
-        Right(new Error("Não existe crédito suficiente para realizar a transação"))
-      }
-    } else {
-      Right(new Error("O cartão já está expirado. Favor remover da carteira."))
-    }
-  }
-
-  def
-
-  /**
     * Método responsável por receber o pagamento de um cartão.
     * - If capable of releasing credit (pay a certain amount on the cards account)
     *
