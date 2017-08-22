@@ -1,6 +1,6 @@
 package io.atleastonce.wallet.manager.domain
 
-import java.time.ZoneOffset
+import java.time.{LocalDateTime, ZoneOffset}
 
 case class Wallet(id: String,
                   credit: Float,
@@ -12,6 +12,15 @@ case class Wallet(id: String,
   require(credit >= 0F, "O valor mínimo da carteira é 0")
   assume(credit <= this.getMaximumLimit,
     "O limite máximo de um cartão de uma carteira não pode ultrapassar a soma dos limites dos cartões")
+
+  private implicit val ord = new Ordering[CreditCard] {
+    def compare(self: CreditCard, that: CreditCard): Int = {
+      that.getDueDateMillis compare self.getDueDateMillis match {
+        case 0 => self.credit compare that.credit
+        case c => c
+      }
+    }
+  }
 
   /**
     * Método responsável por calcular o limite máximo de uma carteira
@@ -74,7 +83,33 @@ case class Wallet(id: String,
     * by the user, maximum limit and available credit)
     */
   def getAvailableCredit: Float = {
-    cards.map(_.getAvailableCredit).sum
+    cards.filter(_.isValid).map(_.getAvailableCredit).sum
+  }
+
+  /**
+    * Método responsável por gerar a lista de transações e cartões a serem descontados
+    *
+    * @param value Valor total da transação
+    * @return Lista de transaçõe e cartões a serem atualizados.
+    */
+  def purchase(value: Float): Either[List[(CreditCard, DebitTransaction)], Throwable] = {
+    selectBestCreditCard(value) match {
+      case Right(err) => Right(err)
+      case Left(ccards) => Left(this.generateTransactions(ccards, value))
+    }
+  }
+
+  private def generateTransactions(ccards: List[CreditCard], value: Float): List[(CreditCard, DebitTransaction)] = {
+    var moneyNeeded = value
+
+    ccards.map(card =>
+      if (moneyNeeded > card.getAvailableCredit) {
+        moneyNeeded = moneyNeeded - card.getAvailableCredit
+        (card, DebitTransaction(card.getAvailableCredit, LocalDateTime.now))
+      } else {
+        (card, DebitTransaction(moneyNeeded, LocalDateTime.now))
+      }
+    )
   }
 
   /**
@@ -94,26 +129,31 @@ case class Wallet(id: String,
     if (value > this.getAvailableCredit) {
       Right(new Error("O valor da compra é maior que o crédito disponível na carteira"))
     } else {
-      // cartões que possuem crédito para a compra single shot
-      var f1 = this.cards.filter(_.getAvailableCredit >= value)
-        .sortWith((cc1, cc2) => getFarthestDueDateCard(cc1.getDueDateMillis, cc2.getDueDateMillis)
-          && lowerCredit(cc1.credit, cc2.credit))
-
-      if (f1.nonEmpty) {
-        Left(List(f1.head))
-      } else {
-        // será necessário mais de um cartão para realizar a compra
-        Right(new Error("deu ruim"))
+      tryGetCreditCardForOneShotPayment(value) match {
+        case Left(card) => Left(card)
+        case Right(_) => Left(this.getMoreThanOneCardForPayment(value))
       }
     }
   }
 
-  private def lowerCredit(credit1: Float, credit2: Float): Boolean = {
-    credit1 < credit2
+  private def tryGetCreditCardForOneShotPayment(value: Float): Either[List[CreditCard], Throwable] = {
+    val f1 = this.cards.filter(cc => cc.isValid && cc.getAvailableCredit >= value).sorted
+
+    if (f1.nonEmpty) {
+      Left(List(f1.head))
+    } else {
+      Right(new Error("Não foi possível utilizar apenas um cartão para pagamento"))
+    }
   }
 
-  private def getFarthestDueDateCard(dueDate1: Long, dueDate2: Long): Boolean = {
-    dueDate1 > dueDate2
+  private def getMoreThanOneCardForPayment(value: Float): List[CreditCard] = {
+    var takeUntilBiggerThanZero = value
+
+    this.cards.filter(_.isValid).sorted.takeWhile(cc => {
+        val needCredit = takeUntilBiggerThanZero > 0
+        takeUntilBiggerThanZero = takeUntilBiggerThanZero - cc.getAvailableCredit
+        needCredit
+      })
   }
 
   private def removalAllowed(card: CreditCard): Either[Wallet, Throwable] = {

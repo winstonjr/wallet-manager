@@ -33,11 +33,10 @@ case class CreditCard(id: String,
     * @return O cartão de crédito com a nova transação ou uma mensagem informando que não é possível
     *         realizar a transação.
     */
-  def Purchase(transaction: PaymentTransaction): Either[CreditCard, Throwable] = {
+  def purchase(transaction: DebitTransaction): Either[CreditCard, Throwable] = {
     if (this.expirationDate.isAfter(transaction.date)) {
       if (isCreditAvailableForTransaction(transaction.value)) {
         val newTransactionList = transactions :+ transaction
-        // TODO: Atualizar o banco de dados com a informação
         Left(this.copy(transactions = newTransactionList))
       } else {
         Right(new Error("Não existe crédito suficiente para realizar a transação"))
@@ -47,6 +46,8 @@ case class CreditCard(id: String,
     }
   }
 
+  def
+
   /**
     * Método responsável por receber o pagamento de um cartão.
     * - If capable of releasing credit (pay a certain amount on the cards account)
@@ -54,7 +55,7 @@ case class CreditCard(id: String,
     * @param transaction transação que está sendo realizada
     * @return Nova carteira com o pagamento adicionado
     */
-  def AddCredits(transaction: DebitTransaction): CreditCard = {
+  def AddCredits(transaction: PaymentTransaction): CreditCard = {
     val newTransactionList = transactions :+ transaction
     this.copy(transactions = newTransactionList)
   }
@@ -71,6 +72,10 @@ case class CreditCard(id: String,
 
   def getDueDateMillis: Long = {
     this.getDueDate.toInstant(ZoneOffset.UTC).toEpochMilli
+  }
+
+  def isValid: Boolean = {
+    this.expirationDate.isAfter(LocalDateTime.now)
   }
 
   private def isCreditAvailableForTransaction(value: Float): Boolean = {
