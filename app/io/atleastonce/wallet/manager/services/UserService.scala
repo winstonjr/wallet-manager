@@ -4,7 +4,7 @@ import java.util.UUID
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.User
-import io.atleastonce.wallet.manager.repositories.{Data, UserRepo}
+import io.atleastonce.wallet.manager.repositories.UserRepo
 
 @Singleton
 class UserService @Inject()(userRepo: UserRepo) {

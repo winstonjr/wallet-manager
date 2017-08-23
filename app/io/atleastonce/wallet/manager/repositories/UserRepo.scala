@@ -25,7 +25,7 @@ class UserRepo @Inject()(configuration: Configuration) {
 
   def getUser(id: String): Option[User] = {
     run(quote {
-      query[UserDTO].filter(user => user.id == lift(id))
+      query[UserDTO].filter(u => u.id == lift(id))
     }).headOption.map(_.getUser)
   }
 
