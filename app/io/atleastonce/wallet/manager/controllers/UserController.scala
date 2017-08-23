@@ -1,10 +1,8 @@
 
 package io.atleastonce.wallet.manager.controllers
 
-import java.util.UUID
 import javax.inject.{Inject, Singleton}
 
-import io.atleastonce.wallet.manager.domain.User
 import io.atleastonce.wallet.manager.services.UserService
 import org.json4s._
 import org.json4s.native.Serialization.write
@@ -24,8 +22,10 @@ class UserController @Inject()(cc: ControllerComponents,
 
   def createUser: Action[JsValue] = Action(parse.json) { implicit request =>
     val data = Json.parse(request.body.toString)
-    val result = userService.save(data.name.toBareString)
-    Created(write(result)).as(JSON)
+    userService.save(data.name.toBareString) match {
+      case Left(result) => Created(write(result)).as(JSON)
+      case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
+    }
   }
 
   def updateUser(id: String): Action[JsValue] = Action(parse.json) { implicit request =>

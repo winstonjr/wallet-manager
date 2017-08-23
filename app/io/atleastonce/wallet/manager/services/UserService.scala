@@ -1,36 +1,35 @@
 package io.atleastonce.wallet.manager.services
 
 import java.util.UUID
-import javax.inject.Singleton
+import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.User
-import io.atleastonce.wallet.manager.repositories.Data
+import io.atleastonce.wallet.manager.repositories.{Data, UserRepo}
 
 @Singleton
-class UserService {
+class UserService @Inject()(userRepo: UserRepo) {
 
   def getAllUsers: List[User] = {
-    Data.getAllUsers
+    userRepo.getAllUsers
   }
 
   def load(id: String): Either[User, Throwable] = {
-    Data.getUser(id) match {
+    userRepo.getUser(id) match {
       case Some(u) => Left(u)
       case None => Right(new Error("Não foi possível encontrar o usuário pesquisado"))
     }
   }
 
-  def save(name: String): User = {
+  def save(name: String): Either[User, Throwable] = {
     val newUser = User(UUID.randomUUID.toString, name, UUID.randomUUID.toString, User.generateSecretKey)
-    Data.addUser(newUser)
+    userRepo.addUser(newUser)
   }
 
   def update(id: String, name: String): Either[User, Throwable] = {
-    Data.getUser(id) match {
+    userRepo.getUser(id) match {
       case Some(u) =>
         val newUser = u.copy(name = name)
-        Data.updateUser(u, newUser)
-        Left(newUser)
+        userRepo.updateUser(newUser)
       case None => Right(new Error("O usuário não foi encontrado. Não é possível atualizar o mesmo"))
     }
   }

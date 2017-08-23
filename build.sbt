@@ -18,12 +18,10 @@ scalaVersion := "2.12.2"
 libraryDependencies ++= Seq(
   guice,
   "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test,
-  "org.xerial" % "sqlite-jdbc" % "3.18.0",
+  "org.postgresql" % "postgresql" % "9.4.1208",
   "io.getquill" %% "quill-jdbc" % "1.3.0",
   "org.json4s" %% "json4s-native" % "3.5.2",
-  "com.propensive" %% "rapture" % "2.0.0-M8",
-  "com.propensive" % "rapture-json-json4s_sjs0.6_2.12" % "2.0.0-M8",
-  "com.propensive" % "rapture-json-jackson_2.12" % "2.0.0-M8"
+  "com.propensive" %% "rapture" % "2.0.0-M8"
 )
 //libraryDependencies += guice
 //libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test

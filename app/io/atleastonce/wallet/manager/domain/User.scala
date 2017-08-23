@@ -29,6 +29,15 @@ case class User(id: String,
     val newWalletList = this.wallets :+ wallet
     Left(this.copy(wallets = newWalletList))
   }
+
+  def getUserDTO: UserDTO = {
+    UserDTO(
+      this.id,
+      this.name,
+      this.accessKey,
+      this.secretAccessKey
+    )
+  }
 }
 
 object User {
@@ -38,4 +47,18 @@ object User {
       .digest(UUID.randomUUID().toString.getBytes())
       .map("%02X" format _)
       .mkString
+}
+
+case class UserDTO(id: String,
+                   name: String,
+                   accessKey: String,
+                   secretAccessKey: String) {
+  def getUser: User = {
+    User(
+      this.id,
+      this.name,
+      this.accessKey,
+      this.secretAccessKey
+    )
+  }
 }
