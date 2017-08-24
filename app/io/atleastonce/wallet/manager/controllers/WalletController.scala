@@ -49,5 +49,13 @@ class WalletController  @Inject()(cc: ControllerComponents,
     }
   }
 
-  // TODO: Criar transações da carteira
+//  def purchase(userId: String, id: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
+//    val data = Json.parse(request.body.toString)
+//    val wallet = walletService.purchase(id, userId, data.value.toBareString.toFloat)
+//
+//    wallet match {
+//      case Left(w) => Ok(write(w)).as(JSON)
+//      case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
+//    }
+//  }
 }

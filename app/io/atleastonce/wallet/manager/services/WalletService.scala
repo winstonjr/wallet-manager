@@ -46,4 +46,17 @@ class WalletService @Inject()(walletRepo: WalletRepo) {
       case Right(r) => Right(r)
     }
   }
+
+//  def purchase(id: String, userId: String, value: Float): Either[Wallet, Throwable] = {
+//    this.getWallet(id, userId) match {
+//      case Left(w) =>
+//        w.purchase(value) match {
+//          case Left(transactions) =>
+//            // TODO: CreditCard transactions
+//            //transactions.foreach(t => t)
+//          case Right(err) => Right(new Error(err.getMessage, err))
+//        }
+//      case Right(r) => Right(r)
+//    }
+//  }
 }

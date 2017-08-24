@@ -3,7 +3,6 @@ package io.atleastonce.wallet.manager.repositories
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.{User, UserDTO}
-import io.getquill.{PostgresJdbcContext, SnakeCase}
 import play.api.Configuration
 
 import scala.util.{Failure, Success, Try}
@@ -11,7 +10,7 @@ import scala.util.{Failure, Success, Try}
 @Singleton
 class UserRepo @Inject()(configuration: Configuration) {
   val logger = play.api.Logger(this.getClass)
-  lazy val ctx = new PostgresJdbcContext[SnakeCase](configuration.getConfig("ctx").get.underlying)
+  lazy val ctx = DataUtil.ctx
   import ctx._
   implicit val queryMeta: SchemaMeta[UserDTO] = schemaMeta[UserDTO](
     "wallet.users"
