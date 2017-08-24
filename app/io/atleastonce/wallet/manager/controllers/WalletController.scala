@@ -48,4 +48,6 @@ class WalletController  @Inject()(cc: ControllerComponents,
       case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
     }
   }
+
+  // TODO: Criar transações da carteira
 }
