@@ -20,19 +20,19 @@ class UserRepo @Inject()(configuration: Configuration) {
   def getAllUsers: List[User] = {
     run(quote {
       query[UserDTO]
-    }).map(_.getUser)
+    }).map(_.toUser)
   }
 
   def getUser(id: String): Option[User] = {
     run(quote {
       query[UserDTO].filter(u => u.id == lift(id))
-    }).headOption.map(_.getUser)
+    }).headOption.map(_.toUser)
   }
 
   def addUser(user: User): Either[User, Throwable] = {
    Try {
       run(quote {
-        query[UserDTO].insert(lift(user.getUserDTO))
+        query[UserDTO].insert(lift(user.toUserDTO))
       })
     } match {
       case Success(_) =>
@@ -46,7 +46,7 @@ class UserRepo @Inject()(configuration: Configuration) {
   def updateUser(user: User): Either[User, Throwable] = {
     Try {
       run(quote {
-        query[UserDTO].filter(_.id == lift(user.id)).update(lift(user.getUserDTO))
+        query[UserDTO].filter(_.id == lift(user.id)).update(lift(user.toUserDTO))
       })
     } match {
       case Success(result) if result == 0 =>

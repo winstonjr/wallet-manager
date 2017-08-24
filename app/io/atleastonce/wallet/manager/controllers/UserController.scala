@@ -37,7 +37,7 @@ class UserController @Inject()(cc: ControllerComponents,
   }
 
   def findById(id: String): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-    val user = userService.load(id)
+    val user = userService.loadFull(id)
 
     user match {
       case Left(u) => Ok(write(u)).as(JSON)

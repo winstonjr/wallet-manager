@@ -172,3 +172,12 @@ case class Wallet(id: String,
     this.copy(cards = newCards)
   }
 }
+
+case class WalletDTO(id: String,
+                     credit: Float,
+                     userId: String) {
+  def toWallet: Wallet = {
+    Wallet(id,
+      credit)
+  }
+}

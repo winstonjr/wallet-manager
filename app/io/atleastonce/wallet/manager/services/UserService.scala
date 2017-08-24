@@ -4,10 +4,11 @@ import java.util.UUID
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.User
-import io.atleastonce.wallet.manager.repositories.UserRepo
+import io.atleastonce.wallet.manager.repositories.{UserRepo, WalletRepo}
 
 @Singleton
-class UserService @Inject()(userRepo: UserRepo) {
+class UserService @Inject()(userRepo: UserRepo,
+                            walletRepo: WalletRepo) {
 
   def getAllUsers: List[User] = {
     userRepo.getAllUsers
@@ -16,6 +17,13 @@ class UserService @Inject()(userRepo: UserRepo) {
   def load(id: String): Either[User, Throwable] = {
     userRepo.getUser(id) match {
       case Some(u) => Left(u)
+      case None => Right(new Error("Não foi possível encontrar o usuário pesquisado"))
+    }
+  }
+
+  def loadFull(id: String): Either[User, Throwable] = {
+    userRepo.getUser(id) match {
+      case Some(u) => Left(u.copy(wallets = walletRepo.getWalletsByUser(id)))
       case None => Right(new Error("Não foi possível encontrar o usuário pesquisado"))
     }
   }

@@ -30,7 +30,7 @@ case class User(id: String,
     Left(this.copy(wallets = newWalletList))
   }
 
-  def getUserDTO: UserDTO = {
+  def toUserDTO: UserDTO = {
     UserDTO(
       this.id,
       this.name,
@@ -53,7 +53,7 @@ case class UserDTO(id: String,
                    name: String,
                    accessKey: String,
                    secretAccessKey: String) {
-  def getUser: User = {
+  def toUser: User = {
     User(
       this.id,
       this.name,
