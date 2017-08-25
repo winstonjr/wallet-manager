@@ -28,6 +28,10 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo) {
     }
   }
 
+  def loadFull(walletId: String): List[CreditCard] = {
+    creditCardRepo.getCreditCardsByWallet(walletId)
+  }
+
   def save(walletId: String, number: String, cvv: String, dueDate: Int,
            expirationDate:LocalDateTime, credit: Float): Either[CreditCard, Throwable] = {
     val newCreditCard = CreditCardDTO(UUID.randomUUID.toString, number, cvv, dueDate,

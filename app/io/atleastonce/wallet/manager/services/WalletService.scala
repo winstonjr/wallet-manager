@@ -9,7 +9,8 @@ import io.atleastonce.wallet.manager.repositories.WalletRepo
 import scala.util.{Failure, Success, Try}
 
 @Singleton
-class WalletService @Inject()(walletRepo: WalletRepo) {
+class WalletService @Inject()(walletRepo: WalletRepo,
+                              creditCardService: CreditCardService) {
   def getWallet(id: String, userId: String): Either[Wallet, Throwable] = {
     walletRepo.getWallet(id, userId) match {
       case Some(w) => Left(w)
@@ -26,6 +27,14 @@ class WalletService @Inject()(walletRepo: WalletRepo) {
         Right(new Error("Não foi possível encontrar carteiras para este usuário"))
     }
   }
+
+//  def loadFull(userId: String): List[Wallet] = {
+//    this.getWalletsByUser(userId) match {
+//      case Left(ws) =>
+//        Left(ws.map(w => w.copy(cards = creditCardService.loadFull(w.id))))
+//      case Right(err) => Right(err)
+//    }
+//  }
 
   def save(userId: String, credit: Float): Either[Wallet, Throwable] = {
     val newWallet = WalletDTO(UUID.randomUUID.toString, credit, userId)
