@@ -28,13 +28,9 @@ class WalletService @Inject()(walletRepo: WalletRepo,
     }
   }
 
-//  def loadFull(userId: String): List[Wallet] = {
-//    this.getWalletsByUser(userId) match {
-//      case Left(ws) =>
-//        Left(ws.map(w => w.copy(cards = creditCardService.loadFull(w.id))))
-//      case Right(err) => Right(err)
-//    }
-//  }
+  def loadFull(userId: String): List[Wallet] = {
+    walletRepo.getWalletsByUser(userId).map(w => w.copy(cards = creditCardService.loadFull(w.id)))
+  }
 
   def save(userId: String, credit: Float): Either[Wallet, Throwable] = {
     val newWallet = WalletDTO(UUID.randomUUID.toString, credit, userId)

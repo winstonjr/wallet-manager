@@ -10,7 +10,8 @@ import io.atleastonce.wallet.manager.repositories.CreditCardRepo
 import scala.util.{Failure, Success, Try}
 
 @Singleton
-class CreditCardService @Inject()(creditCardRepo: CreditCardRepo) {
+class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
+                                  transactionService: TransactionService) {
   def getCreditCard(id: String, walletId: String): Either[CreditCard, Throwable] = {
     creditCardRepo.getCreditCard(id, walletId) match {
       case Some(w) => Left(w)
@@ -30,6 +31,7 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo) {
 
   def loadFull(walletId: String): List[CreditCard] = {
     creditCardRepo.getCreditCardsByWallet(walletId)
+      .map(cc => cc.copy(transactions = transactionService.loadFull(cc.id)))
   }
 
   def save(walletId: String, number: String, cvv: String, dueDate: Int,

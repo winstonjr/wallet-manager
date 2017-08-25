@@ -28,6 +28,10 @@ class TransactionService @Inject()(transactionRepo: TransactionRepo) {
     }
   }
 
+  def loadFull(creditCardId: String): List[Transaction] = {
+    transactionRepo.getTransactionsByCreditCard(creditCardId)
+  }
+
   def save(creditCardId: String, operation: String, value: Float): Either[Transaction, Throwable] = {
     val newTransaction = TransactionDTO(UUID.randomUUID.toString, operation, value, LocalDateTime.now, creditCardId)
 

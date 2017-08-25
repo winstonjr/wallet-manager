@@ -8,7 +8,7 @@ import io.atleastonce.wallet.manager.repositories.{UserRepo, WalletRepo}
 
 @Singleton
 class UserService @Inject()(userRepo: UserRepo,
-                            walletRepo: WalletRepo) {
+                            walletService: WalletService) {
 
   def getAllUsers: List[User] = {
     userRepo.getAllUsers
@@ -23,7 +23,7 @@ class UserService @Inject()(userRepo: UserRepo,
 
   def loadFull(id: String): Either[User, Throwable] = {
     userRepo.getUser(id) match {
-      case Some(u) => Left(u.copy(wallets = walletRepo.getWalletsByUser(id)))
+      case Some(u) => Left(u.copy(wallets = walletService.loadFull(id)))
       case None => Right(new Error("Não foi possível encontrar o usuário pesquisado"))
     }
   }
