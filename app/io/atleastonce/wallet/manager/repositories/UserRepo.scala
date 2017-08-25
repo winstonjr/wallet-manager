@@ -3,12 +3,11 @@ package io.atleastonce.wallet.manager.repositories
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.{User, UserDTO}
-import play.api.Configuration
 
 import scala.util.{Failure, Success, Try}
 
 @Singleton
-class UserRepo @Inject()(configuration: Configuration) {
+class UserRepo @Inject()() {
   val logger = play.api.Logger(this.getClass)
   lazy val ctx = DataUtil.ctx
   import ctx._

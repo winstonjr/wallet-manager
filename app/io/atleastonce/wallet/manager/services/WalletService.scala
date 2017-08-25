@@ -40,7 +40,7 @@ class WalletService @Inject()(walletRepo: WalletRepo) {
     this.getWallet(id, userId) match {
       case Left(w) =>
         Try(w.copy(credit = credit)) match {
-          case Success(wallet) => walletRepo.updateUser(WalletDTO(wallet.id, credit, userId))
+          case Success(wallet) => walletRepo.updateWallet(WalletDTO(wallet.id, credit, userId))
           case Failure(err) => Right(new Error(err.getMessage, err))
         }
       case Right(r) => Right(r)

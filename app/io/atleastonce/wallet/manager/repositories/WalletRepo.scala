@@ -3,12 +3,11 @@ package io.atleastonce.wallet.manager.repositories
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.{Wallet, WalletDTO}
-import play.api.Configuration
 
 import scala.util.{Failure, Success, Try}
 
 @Singleton
-class WalletRepo @Inject()(configuration: Configuration) {
+class WalletRepo @Inject()() {
   val logger = play.api.Logger(this.getClass)
   lazy val ctx = DataUtil.ctx
   import ctx._
@@ -42,7 +41,7 @@ class WalletRepo @Inject()(configuration: Configuration) {
     }
   }
 
-  def updateUser(wallet: WalletDTO): Either[Wallet, Throwable] = {
+  def updateWallet(wallet: WalletDTO): Either[Wallet, Throwable] = {
     Try {
       run(quote {
         query[WalletDTO].filter(_.id == lift(wallet.id)).update(lift(wallet))

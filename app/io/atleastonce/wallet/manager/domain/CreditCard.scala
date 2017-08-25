@@ -99,3 +99,22 @@ object CreditCard {
     LocalDateTime.of(date.getYear, date.getMonthValue, 1, 0, 0, 0, 0)
   }
 }
+
+case class CreditCardDTO(id: String,
+                         number: String,
+                         cvv: String,
+                         dueDate: Int,
+                         expirationDate: LocalDateTime,
+                         credit: Float,
+                         removed: Boolean,
+                         walletId: String) {
+  def toCreditCard: CreditCard = {
+    CreditCard(id,
+      number,
+      cvv,
+      dueDate,
+      expirationDate,
+      credit,
+      removed)
+  }
+}
