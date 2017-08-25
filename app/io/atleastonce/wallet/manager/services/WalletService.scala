@@ -32,6 +32,13 @@ class WalletService @Inject()(walletRepo: WalletRepo,
     walletRepo.getWalletsByUser(userId).map(w => w.copy(cards = creditCardService.loadFull(w.id)))
   }
 
+  def loadFullById(id: String, userId: String): Either[Wallet, Throwable] = {
+    walletRepo.getWallet(id, userId).map(w => w.copy(cards = creditCardService.loadFull(w.id))) match {
+      case Some(ws) => Left(ws)
+      case None => Right(new Error(s"Não foi possível encontrar a carteira procurada. Id: $id ::: userId: $userId"))
+    }
+  }
+
   def save(userId: String, credit: Float): Either[Wallet, Throwable] = {
     val newWallet = WalletDTO(UUID.randomUUID.toString, credit, userId)
 
@@ -52,16 +59,16 @@ class WalletService @Inject()(walletRepo: WalletRepo,
     }
   }
 
-//  def purchase(id: String, userId: String, value: Float): Either[Wallet, Throwable] = {
-//    this.getWallet(id, userId) match {
-//      case Left(w) =>
-//        w.purchase(value) match {
-//          case Left(transactions) =>
-//            // TODO: CreditCard transactions
-//            //transactions.foreach(t => t)
-//          case Right(err) => Right(new Error(err.getMessage, err))
-//        }
-//      case Right(r) => Right(r)
-//    }
-//  }
+  def purchase(id: String, userId: String, value: Float): Either[Wallet, Throwable] = {
+    this.loadFullById(id, userId) match {
+      case Left(w) =>
+        w.purchase(value) match {
+          case Left(ts) =>
+            ts.foreach(t => creditCardService.purchase(id, w.id, t._2))
+            this.loadFullById(id, userId)
+          case Right(err) => Right(new Error(err.getMessage, err))
+        }
+      case Right(r) => Right(r)
+    }
+  }
 }

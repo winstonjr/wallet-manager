@@ -84,6 +84,17 @@ case class CreditCard(id: String,
     this.expirationDate.isAfter(LocalDateTime.now)
   }
 
+  /**
+    * Método responsável por adicionar uma transação de débito a um cartão
+    *
+    * @param transaction transação a ser adicionada
+    * @return cartão de crédito com transações atualizadas
+    */
+  def purchase(transaction: DebitTransaction): CreditCard = {
+    val newTransactionList = transactions :+ transaction
+    this.copy(transactions = newTransactionList)
+  }
+
   private def isCreditAvailableForTransaction(value: Float): Boolean = {
     // TODO: Buscar informações atualizadas no banco
     value <= this.getAvailableCredit
@@ -95,7 +106,7 @@ case class CreditCard(id: String,
 }
 
 object CreditCard {
-  def getExpiration(date: LocalDateTime) = {
+  def getExpiration(date: LocalDateTime): LocalDateTime = {
     LocalDateTime.of(date.getYear, date.getMonthValue, 1, 0, 0, 0, 0)
   }
 }
