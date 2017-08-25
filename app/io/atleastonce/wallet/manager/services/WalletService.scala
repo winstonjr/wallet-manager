@@ -3,7 +3,7 @@ package io.atleastonce.wallet.manager.services
 import java.util.UUID
 import javax.inject.{Inject, Singleton}
 
-import io.atleastonce.wallet.manager.domain.{User, Wallet, WalletDTO}
+import io.atleastonce.wallet.manager.domain.{Wallet, WalletDTO}
 import io.atleastonce.wallet.manager.repositories.WalletRepo
 
 import scala.util.{Failure, Success, Try}
