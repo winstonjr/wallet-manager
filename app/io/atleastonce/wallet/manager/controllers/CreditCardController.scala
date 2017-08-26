@@ -1,6 +1,7 @@
 package io.atleastonce.wallet.manager.controllers
 
-import java.time.LocalDateTime
+import java.time._
+import java.time.format.DateTimeFormatter
 import javax.inject.{Inject, Singleton}
 
 import io.atleastonce.wallet.manager.domain.PaymentTransaction
@@ -20,8 +21,13 @@ class CreditCardController @Inject()(cc: ControllerComponents,
   def createCreditCard(userId: String, walletId: String): Action[JsValue] = Action(parse.json) { implicit request =>
     val data = Json.parse(request.body.toString)
 
-    creditCardService.save(walletId, data.number.toBareString, data.cvv.toBareString,
-      data.dueDate.toBareString.toInt, LocalDateTime.parse(data.expirationDate.toBareString),
+    val localDate = LocalDate.parse(data.expirationDate.toBareString.replaceAll("\"", ""))
+
+    creditCardService.save(walletId,
+      data.number.toBareString.replaceAll("\"", ""),
+      data.cvv.toBareString.replaceAll("\"", ""),
+      data.dueDate.toBareString.toInt,
+      LocalDateTime.of(localDate, LocalTime.now),
       data.credit.toBareString.toFloat) match {
       case Left(result) => Ok(write(result)).as(JSON)
       case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
@@ -30,9 +36,17 @@ class CreditCardController @Inject()(cc: ControllerComponents,
 
   def updateCreditCard(userId: String, walletId: String, id: String): Action[JsValue] = Action(parse.json) { implicit request =>
     val data = Json.parse(request.body.toString)
-    creditCardService.update(id, walletId, data.number.toBareString, data.cvv.toBareString,
-      data.dueDate.toBareString.toInt, LocalDateTime.parse(data.expirationDate.toBareString),
-      data.credit.toBareString.toFloat, data.removed.toBareString.toBoolean) match {
+
+    val localDate = LocalDate.parse(data.expirationDate.toBareString.replaceAll("\"", ""))
+
+    creditCardService.update(id,
+      walletId,
+      data.number.toBareString.replaceAll("\"", ""),
+      data.cvv.toBareString.replaceAll("\"", ""),
+      data.dueDate.toBareString.toInt,
+      LocalDateTime.of(localDate, LocalTime.now),
+      data.credit.toBareString.toFloat,
+      data.removed.toBareString.toBoolean) match {
       case Left(result) => Created(write(result)).as(JSON)
       case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
     }
