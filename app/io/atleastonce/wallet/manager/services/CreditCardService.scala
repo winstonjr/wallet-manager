@@ -60,7 +60,7 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
     }
   }
 
-  def purchase(id: String, walletId: String, transaction: Transaction): Either[CreditCard, Throwable] = {
+  def transact(id: String, walletId: String, transaction: Transaction): Either[CreditCard, Throwable] = {
     this.getCreditCard(id, walletId) match {
       case Left(cc) =>
         transactionService.save(cc.id, transaction.operation, transaction.value) match {
