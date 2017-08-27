@@ -58,7 +58,7 @@ case class CreditCard(id: String,
     val now = LocalDateTime.now
 
     if (this.dueDate < now.getDayOfMonth) {
-      LocalDateTime.of(now.getYear, now.getMonthValue + 1, this.dueDate, 0, 0, 0)
+      LocalDateTime.of(now.getYear, now.plusMonths(1L).getMonthValue, this.dueDate, 0, 0, 0)
     } else {
       LocalDateTime.of(now.getYear, now.getMonthValue, this.dueDate, 0, 0, 0)
     }
@@ -90,7 +90,7 @@ case class CreditCard(id: String,
     * @return cartão de crédito com transações atualizadas ou erro de transação não autorizada
     */
   def purchase(transaction: DebitTransaction): Either[CreditCard, Throwable] = {
-    if (isCreditAvailableForTransaction(transaction.value)) {
+    if (this.isCreditAvailableForTransaction(transaction.value)) {
       val newTransactionList = transactions :+ transaction
       Left(this.copy(transactions = newTransactionList))
     } else {

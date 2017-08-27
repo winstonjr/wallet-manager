@@ -1,6 +1,6 @@
 package io.atleastonce.wallet.manager.domain
 
-import java.time.LocalDateTime
+import java.time.{LocalDateTime, ZoneOffset}
 import java.util.UUID
 
 import org.scalatestplus.play.PlaySpec
@@ -186,6 +186,72 @@ class CreditCardSpec extends PlaySpec {
           PaymentTransaction(60F)))
 
       cc.getAvailableCredit mustBe 90F
+    }
+
+    "have an option to receive payments" in {
+      val cc = CreditCard(UUID.randomUUID().toString, "1234123412341234", "123", 5,
+        LocalDateTime.now().plusMonths(2L), 1F)
+      val newCC = cc.pay(PaymentTransaction(50L))
+
+      newCC.getAvailableCredit mustBe 51L
+    }
+
+    "generate the payment date on this month if date is today" in {
+      val now = LocalDateTime.now
+      val cc = CreditCard(UUID.randomUUID().toString, "7654765476547654", "123",
+        now.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+      val dueDate = LocalDateTime.of(now.getYear, now.getMonthValue, now.getDayOfMonth, 0, 0, 0)
+
+      cc.getDueDate mustBe dueDate
+    }
+
+    "generate the payment date on the next month if date is before today" in {
+      val cc = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
+        ValidDate.dateMinusTwoDays.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F,
+        transactions = List(DebitTransaction(100F, LocalDateTime.now)))
+      val now = LocalDateTime.now
+      val dueDate = LocalDateTime.of(now.getYear, now.plusMonths(1L).getMonthValue, cc.dueDate, 0, 0, 0)
+
+      cc.getDueDate mustBe dueDate
+    }
+
+    "generate payment date in milliseconds to make easy to do comparisons" in {
+      val cc = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
+        ValidDate.dateMinusTwoDays.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+      val now = LocalDateTime.now
+      val dueDate = LocalDateTime.of(now.getYear, now.plusMonths(1L).getMonthValue, cc.dueDate, 0, 0, 0)
+
+      cc.getDueDateMillis mustBe dueDate.toInstant(ZoneOffset.UTC).toEpochMilli
+    }
+
+    "must be valid if expiration date is after today" in {
+      val cc = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
+        ValidDate.dateMinusTwoDays.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+
+      cc.isValid mustBe true
+    }
+
+    "must deny a purchase if there is no available credit" in {
+      val cc = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
+        ValidDate.dateMinusTwoDays.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+
+      cc.purchase(DebitTransaction(1500F)) match {
+        case Right(err) =>
+          err.getMessage mustBe "Não existe crédito disponível para a compra"
+        case _ =>
+      }
+    }
+
+    "must allow a purchase if there are available credit" in {
+      val cc = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "7654765476547654", "123",
+        ValidDate.dateMinusTwoDays.getDayOfMonth, LocalDateTime.now().plusYears(5L), 1000F)
+
+      cc.purchase(DebitTransaction(1000F)) match {
+        case Left(cc) =>
+          cc.transactions.length mustBe 1
+          cc.transactions.head.value mustBe 1000F
+          cc.transactions.head.operation mustBe "debit"
+      }
     }
   }
 }
