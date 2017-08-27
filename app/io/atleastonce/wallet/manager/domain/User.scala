@@ -30,6 +30,11 @@ case class User(id: String,
     Left(this.copy(wallets = newWalletList))
   }
 
+  /**
+    * Método responsável por transformar um User em um UserDTO que serve para as transações do ORM
+    *
+    * @return DTO do tipo User.
+    */
   def toUserDTO: UserDTO = {
     UserDTO(
       this.id,

@@ -87,6 +87,17 @@ class UserSpec extends PlaySpec {
         case _ =>
       }
     }
+
+    "create a DTO that can be used for the ORM" in {
+      val user = User("e79cf53a-eb49-449e-91e6-afa6a0831ea4", "n1", "756fd927-4344-468c-b678-abf2ff4c2155", "lala")
+
+      val dto = user.toUserDTO
+
+      dto.secretAccessKey mustBe user.secretAccessKey
+      dto.accessKey mustBe user.accessKey
+      dto.name mustBe user.name
+      dto.id mustBe user.id
+    }
   }
 
   "As an auxiliary method an user" should {
