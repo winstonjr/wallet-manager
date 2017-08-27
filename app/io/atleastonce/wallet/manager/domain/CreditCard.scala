@@ -32,7 +32,6 @@ case class CreditCard(id: String,
     * @return valor disponível para uso em determinado momento
     */
   def getAvailableCredit: Float = {
-    // TODO: Buscar informações do banco de dados
     val accumulatedValue = transactions.map(_.getValueWithSignal).sum
 
     credit - accumulatedValue
@@ -45,7 +44,7 @@ case class CreditCard(id: String,
     * @param transaction transação que está sendo realizada
     * @return Nova carteira com o pagamento adicionado
     */
-  def AddCredits(transaction: PaymentTransaction): CreditCard = {
+  def pay(transaction: PaymentTransaction): CreditCard = {
     val newTransactionList = transactions :+ transaction
     this.copy(transactions = newTransactionList)
   }
@@ -88,15 +87,18 @@ case class CreditCard(id: String,
     * Método responsável por adicionar uma transação de débito a um cartão
     *
     * @param transaction transação a ser adicionada
-    * @return cartão de crédito com transações atualizadas
+    * @return cartão de crédito com transações atualizadas ou erro de transação não autorizada
     */
-  def purchase(transaction: DebitTransaction): CreditCard = {
-    val newTransactionList = transactions :+ transaction
-    this.copy(transactions = newTransactionList)
+  def purchase(transaction: DebitTransaction): Either[CreditCard, Throwable] = {
+    if (isCreditAvailableForTransaction(transaction.value)) {
+      val newTransactionList = transactions :+ transaction
+      Left(this.copy(transactions = newTransactionList))
+    } else {
+      Right(new Error("Não existe crédito disponível para a compra"))
+    }
   }
 
   private def isCreditAvailableForTransaction(value: Float): Boolean = {
-    // TODO: Buscar informações atualizadas no banco
     value <= this.getAvailableCredit
   }
 

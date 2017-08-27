@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 import java.util.UUID
 import javax.inject.{Inject, Singleton}
 
-import io.atleastonce.wallet.manager.domain.{CreditCard, CreditCardDTO, DebitTransaction, Transaction}
+import io.atleastonce.wallet.manager.domain._
 import io.atleastonce.wallet.manager.repositories.CreditCardRepo
 
 import scala.util.{Failure, Success, Try}
@@ -60,11 +60,24 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
     }
   }
 
-  def transact(id: String, walletId: String, transaction: Transaction): Either[CreditCard, Throwable] = {
+  def payment(id: String, walletId: String, transaction: Transaction): Either[CreditCard, Throwable] = {
     this.getCreditCard(id, walletId) match {
       case Left(cc) =>
         transactionService.save(cc.id, transaction.operation, transaction.value) match {
-          case Left(t) => Left(cc.purchase(DebitTransaction(t.value, t.date)))
+          case Left(t) => Left(cc.pay(PaymentTransaction(t.value, t.date)))
+          case Right(err) => Right(err)
+        }
+      case Right(err) => Right(err)
+    }
+  }
+
+  def purchase(id: String, walletId: String, transaction: Transaction): Either[CreditCard, Throwable] = {
+    this.getCreditCard(id, walletId) match {
+      case Left(cc) =>
+        val dt = DebitTransaction(transaction.value, transaction.date)
+        cc.purchase(dt) match {
+          case Left(cct) => transactionService.save(cc.id, dt.operation, dt.value)
+            Left(cct)
           case Right(err) => Right(err)
         }
       case Right(err) => Right(err)

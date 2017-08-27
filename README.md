@@ -65,6 +65,10 @@ sbt test
 * listar usuário específico
 * atualizar um usuário
 ##### Carteiras
+* criar nova carteira
+* atualizar carteira
+* listar todas as carteiras de um usuário
+* fazer uma compra utilizando carteira
 ##### Cartões de crédito
 
 
@@ -74,6 +78,8 @@ sbt test
 * Falta de segurança nos endpoints
 * Dados sensíveis transitando e guardados sem criptografia
 * O multi-tenant não está totalmente correto, podem existir adições cruzadas nas carteiras
+* Não considera snapshots para o calculo do cartão (todo histórico de transações precisa estar na memória)
+* testes integrados não foram feitos
 ## novidades (para mim)
 * Utilização do ORM Quill
 * Utilização do Rapture para de-serialização de dados

@@ -159,8 +159,33 @@ class CreditCardSpec extends PlaySpec {
   }
 
   "A credit card" should {
-    "The credit must not be used from a expired or removed card" in {
-      true mustBe true
+    "calculate available credit of the card" in {
+      val cc = CreditCard(UUID.randomUUID().toString, "1234123412341234", "123", 5,
+        LocalDateTime.now().plusMonths(2L), 1F)
+
+      cc.getAvailableCredit mustBe 1F
+    }
+
+    "calculate available credit considering purchase transactions" in {
+      val cc = CreditCard(UUID.randomUUID().toString, "1234123412341234", "123", 5,
+        LocalDateTime.now().plusMonths(2L), 100F, transactions = List(DebitTransaction(50F)))
+
+      cc.getAvailableCredit mustBe 50F
+    }
+
+    "calculate available credit considering payment transactions" in {
+      val cc = CreditCard(UUID.randomUUID().toString, "1234123412341234", "123", 5,
+        LocalDateTime.now().plusMonths(2L), 100F, transactions = List(PaymentTransaction(50F)))
+
+      cc.getAvailableCredit mustBe 150F
+    }
+
+    "calculate available credit considering purchase & payment transactions" in {
+      val cc = CreditCard(UUID.randomUUID().toString, "1234123412341234", "123", 5,
+        LocalDateTime.now().plusMonths(2L), 100F, transactions = List(DebitTransaction(70F),
+          PaymentTransaction(60F)))
+
+      cc.getAvailableCredit mustBe 90F
     }
   }
 }

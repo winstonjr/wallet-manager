@@ -13,12 +13,12 @@ abstract class Transaction(op: String,
 }
 
 case class PaymentTransaction(v: Float,
-                              d: LocalDateTime) extends Transaction("payment", v, d) {
+                              d: LocalDateTime = LocalDateTime.now) extends Transaction("payment", v, d) {
   override def getValueWithSignal: Float = value * (-1)
 }
 
 case class DebitTransaction(v: Float,
-                            d: LocalDateTime) extends Transaction("debit", v, d) {
+                            d: LocalDateTime = LocalDateTime.now) extends Transaction("debit", v, d) {
   override def getValueWithSignal: Float = value
 }
 
