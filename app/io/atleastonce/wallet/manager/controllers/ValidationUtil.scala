@@ -80,7 +80,7 @@ object SchemaResources {
                                    |  "properties": {
                                    |    "credit": {
                                    |      "id": "/properties/credit",
-                                   |      "type": "string"
+                                   |      "type": "number"
                                    |    }
                                    |  },
                                    |  "required": ["credit"],

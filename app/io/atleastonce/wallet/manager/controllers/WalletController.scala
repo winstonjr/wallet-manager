@@ -16,10 +16,16 @@ class WalletController  @Inject()(cc: ControllerComponents,
   implicit val formats: DefaultFormats.type = DefaultFormats
 
   def createWallet(userId: String): Action[JsValue] = Action(parse.json) { implicit request =>
-    val data = Json.parse(request.body.toString)
-    walletService.save(userId, data.credit.toBareString.toFloat) match {
-      case Left(result) => Created(write(result)).as(JSON)
-      case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
+    val body = request.body.toString
+    JsonSchemaValidator.validate(SchemaResources.createWalletSchema, body) match {
+      case Right(err: SchemaValidationException) =>
+        PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
+      case Left(_) =>
+        val data = Json.parse(body)
+        walletService.save(userId, data.credit.toBareString.toFloat) match {
+          case Left(result) => Created(write(result)).as(JSON)
+          case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
+        }
     }
   }
 
