@@ -90,7 +90,7 @@ object SchemaResources {
   val updateWalletSchema: String = """{
                                      |  "$schema": "http://json-schema.org/draft-04/schema#",
                                      |  "definitions": {},
-                                     |  "id": "createWalletSchema",
+                                     |  "id": "updateWalletSchema",
                                      |  "properties": {
                                      |    "credit": {
                                      |      "id": "/properties/credit",
@@ -144,4 +144,34 @@ object SchemaResources {
                                    |  "required":["credit", "cvv", "dueDate", "expirationDate", "number"],
                                    |  "type": "object"
                                    |}""".stripMargin
+
+  val updateCreditCardSchema: String = """{
+                                         |  "$schema": "http://json-schema.org/draft-04/schema#",
+                                         |  "definitions": {},
+                                         |  "id": "updateCreditCardSchema",
+                                         |  "properties": {
+                                         |    "credit": {
+                                         |      "id": "/properties/credit",
+                                         |      "type": "integer"
+                                         |    },
+                                         |    "cvv": {
+                                         |      "id": "/properties/cvv",
+                                         |      "type": "string"
+                                         |    },
+                                         |    "dueDate": {
+                                         |      "id": "/properties/dueDate",
+                                         |      "type": "integer"
+                                         |    },
+                                         |    "expirationDate": {
+                                         |      "id": "/properties/expirationDate",
+                                         |      "type": "string"
+                                         |    },
+                                         |    "number": {
+                                         |      "id": "/properties/number",
+                                         |      "type": "string"
+                                         |    }
+                                         |  },
+                                         |  "required":["credit", "cvv", "dueDate", "expirationDate", "number"],
+                                         |  "type": "object"
+                                         |}""".stripMargin
 }

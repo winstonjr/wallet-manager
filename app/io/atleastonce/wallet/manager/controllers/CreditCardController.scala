@@ -40,20 +40,25 @@ class CreditCardController @Inject()(cc: ControllerComponents,
   }
 
   def updateCreditCard(userId: String, walletId: String, id: String): Action[JsValue] = Action(parse.json) { implicit request =>
-    val data = Json.parse(request.body.toString)
+    val body = request.body.toString
+    JsonSchemaValidator.validate(SchemaResources.updateCreditCardSchema, body) match {
+      case Right(err: SchemaValidationException) =>
+        PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
+      case Left(_) =>
+        val data = Json.parse(body)
+        val localDate = LocalDate.parse(data.expirationDate.toBareString.replaceAll("\"", ""))
 
-    val localDate = LocalDate.parse(data.expirationDate.toBareString.replaceAll("\"", ""))
-
-    creditCardService.update(id,
-      walletId,
-      data.number.toBareString.replaceAll("\"", ""),
-      data.cvv.toBareString.replaceAll("\"", ""),
-      data.dueDate.toBareString.toInt,
-      LocalDateTime.of(localDate, LocalTime.now),
-      data.credit.toBareString.toFloat,
-      false) match {
-      case Left(result) => Created(write(result)).as(JSON)
-      case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
+        creditCardService.update(id,
+          walletId,
+          data.number.toBareString.replaceAll("\"", ""),
+          data.cvv.toBareString.replaceAll("\"", ""),
+          data.dueDate.toBareString.toInt,
+          LocalDateTime.of(localDate, LocalTime.now),
+          data.credit.toBareString.toFloat,
+          false) match {
+          case Left(result) => Created(write(result)).as(JSON)
+          case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
+        }
     }
   }
 
