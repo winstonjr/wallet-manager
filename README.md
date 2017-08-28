@@ -62,17 +62,71 @@ sbt test
 ### testes via linha de comando
 ##### Usuários
 * criar um novo usuário
+```
+echo '{"name":"Winston wallet"}' | http POST localhost:9000/users
+```
 * listar todos os usuários
+```
+http GET localhost:9000/users
+```
 * listar usuário específico
+```
+http GET localhost:9000/users/$userId
+```
 * atualizar um usuário
+```
+http GET localhost:9000/users/$userId
+```
 ##### Carteiras
+echo '{"value":100.00}' |http POST localhost:9000/users/f9f392f2-772d-4085-8354-15af9989d5cc/wallets/f0bd4631-32e4-4905-af9d-7c626924c8ff/purchases
+
 * criar nova carteira
+```
+echo '{"credit":0.00}' | http POST localhost:9000/users/$userId/wallets
+
+```
 * atualizar carteira
+```
+echo '{"credit":1200.00}' | http PUT localhost:9000/users/$userId/wallets/$walletId
+```
 * listar todas as carteiras de um usuário
+```
+http GET localhost:9000/users/$userId/wallets
+
+```
 * fazer uma compra utilizando carteira
+```
+echo '{"value":1000.00}' |http POST localhost:9000/users/f9f392f2-772d-4085-8354-15af9989d5cc/wallets/f0bd4631-32e4-4905-af9d-7c626924c8ff/purchases
+```
+* listar uma carteira de um usuário
+```
+http GET localhost:9000/users/$userId/wallets/$walletId
+```
 ##### Cartões de crédito
 
 
+
+http GET  localhost:9000/users/f9f392f2-772d-4085-8354-15af9989d5cc/wallets/f0bd4631-32e4-4905-af9d-7c626924c8ff/cards/625e2ed0-7977-47d1-90de-e80ab7996152
+* listar cartões de uma carteira
+```
+http GET  localhost:9000/users/$userId/wallets/$walletId/cards
+```
+* listar cartão de uma carteira
+```
+http GET  localhost:9000/users/$userId/wallets/$walletId/cards/$ccId
+```
+* criar um cartão
+```
+echo '{ "number": "1234123412341234", "cvv": "123", "dueDate": 25, "credit": 1000.00, "expirationDate": "2020-06-01" }' | http POST localhost:9000/users/$userId/wallets/$walletId/cards
+```
+* atualizar um cartão
+```
+echo '{ "number": "1234123412341234", "cvv": "123", "dueDate": 20, "expirationDate": "2027-08-20", "credit": 3000.00 }' | http PUT  localhost:9000/users/$userId/wallets/$walletId/cards/$ccId
+```
+* realizar uma transação de pagamento em um cartão
+```
+echo '{ "value": 1000.00 }' | http POST localhost:9000/users/$userId/wallets/$walletId/cards/$ccId/payments
+```
 ## problemas
 * Concorrencia nas atualizações
 * Provável baixa performance nos serviços (muitas consultas n+1 devido ao modelo de dados)
