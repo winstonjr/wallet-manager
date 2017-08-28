@@ -72,8 +72,8 @@ class CreditCardController @Inject()(cc: ControllerComponents,
 
   def payment(userId: String, walletId: String, id: String): Action[JsValue] = Action(parse.json) { implicit request =>
     val data = Json.parse(request.body.toString)
-    val wallet = creditCardService.payment(id, userId,
-      PaymentTransaction(data.value.toBareString.toFloat, LocalDateTime.now))
+    val wallet = creditCardService.payment(id, walletId,
+      PaymentTransaction(data.value.toBareString.toFloat))
 
     wallet match {
       case Left(w) => Ok(write(w)).as(JSON)
