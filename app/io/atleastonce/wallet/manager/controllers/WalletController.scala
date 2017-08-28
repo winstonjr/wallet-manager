@@ -30,10 +30,16 @@ class WalletController  @Inject()(cc: ControllerComponents,
   }
 
   def updateWallet(userId: String, id: String): Action[JsValue] = Action(parse.json) { implicit request =>
-    val data = Json.parse(request.body.toString)
-    walletService.update(id, userId, data.credit.toBareString.toFloat) match {
-      case Left(result) => Created(write(result)).as(JSON)
-      case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
+    val body = request.body.toString
+    JsonSchemaValidator.validate(SchemaResources.updateWalletSchema, body) match {
+      case Right(err: SchemaValidationException) =>
+        PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
+      case Left(_) =>
+        val data = Json.parse(body)
+        walletService.update(id, userId, data.credit.toBareString.toFloat) match {
+          case Left(result) => Created(write(result)).as(JSON)
+          case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
+        }
     }
   }
 

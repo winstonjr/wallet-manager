@@ -87,6 +87,20 @@ object SchemaResources {
                                      |  "type": "object"
                                      |}""".stripMargin
 
+  val updateWalletSchema: String = """{
+                                     |  "$schema": "http://json-schema.org/draft-04/schema#",
+                                     |  "definitions": {},
+                                     |  "id": "createWalletSchema",
+                                     |  "properties": {
+                                     |    "credit": {
+                                     |      "id": "/properties/credit",
+                                     |      "type": "number"
+                                     |    }
+                                     |  },
+                                     |  "required": ["credit"],
+                                     |  "type": "object"
+                                     |}""".stripMargin
+
   val purchaseSchema: String = """{
                                      |  "$schema": "http://json-schema.org/draft-04/schema#",
                                      |  "definitions": {},
