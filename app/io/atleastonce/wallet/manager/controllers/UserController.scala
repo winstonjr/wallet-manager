@@ -21,10 +21,16 @@ class UserController @Inject()(cc: ControllerComponents,
   }
 
   def createUser: Action[JsValue] = Action(parse.json) { implicit request =>
-    val data = Json.parse(request.body.toString)
-    userService.save(data.name.toBareString) match {
-      case Left(result) => Created(write(result)).as(JSON)
-      case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
+    val body = request.body.toString
+    JsonSchemaValidator.validate(SchemaResources.createUserSchema, body) match {
+      case Right(err: SchemaValidationException) =>
+        PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
+      case Left(_) =>
+        val data = Json.parse(body)
+        userService.save(data.name.toBareString) match {
+          case Left(result) => Created(write(result)).as(JSON)
+          case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
+        }
     }
   }
 

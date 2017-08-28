@@ -10,7 +10,7 @@ object JsonSchemaValidator {
 
   def validate(jsonSchema: String,
                json: String,
-               schemaValidator: SchemaValidator = SchemaValidator()): Either[SchemaValidationException, String] = {
+               schemaValidator: SchemaValidator = SchemaValidator()): Either[String, SchemaValidationException] = {
     Try {
       (Json.parse(jsonSchema), Json.parse(json))
     } match {
@@ -19,7 +19,7 @@ object JsonSchemaValidator {
           case JsSuccess(validSchema, _) =>
             schemaValidator.validate(validSchema)(instance) match {
               case JsSuccess(validInstance, _) =>
-                Right(validInstance.toString)
+                Left(validInstance.toString)
               case JsError(errors) =>
                 val listErrors: List[String] = errors
                   .map(
@@ -29,14 +29,14 @@ object JsonSchemaValidator {
                         .head
                   )
                   .toList
-                Left(SchemaValidationException(listErrors.mkString(",")))
+                Right(SchemaValidationException(listErrors.mkString(",")))
             }
           case JsError(invalidSchema) =>
-            Left(SchemaValidationException(s"Invalid JSON schema. $invalidSchema"))
+            Right(SchemaValidationException(s"Invalid JSON schema. $invalidSchema"))
         }
       case Failure(ex) =>
         Logger.error(s"Error while trying to parse request body or json schema", ex)
-        Left(SchemaValidationException(ex.getMessage))
+        Right(SchemaValidationException(ex.getMessage))
     }
   }
 
@@ -55,7 +55,7 @@ object SchemaResources {
                            |      "type": "string"
                            |    }
                            |  },
-                           |  "required": ["name"]
+                           |  "required": ["name"],
                            |  "type": "object"
                            |}""".stripMargin
 }
