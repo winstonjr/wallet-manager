@@ -81,13 +81,19 @@ class CreditCardController @Inject()(cc: ControllerComponents,
   }
 
   def payment(userId: String, walletId: String, id: String): Action[JsValue] = Action(parse.json) { implicit request =>
-    val data = Json.parse(request.body.toString)
-    val wallet = creditCardService.payment(id, walletId,
-      PaymentTransaction(data.value.toBareString.toFloat))
+    val body = request.body.toString
+    JsonSchemaValidator.validate(SchemaResources.paymentSchema, body) match {
+      case Right(err: SchemaValidationException) =>
+        PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
+      case Left(_) =>
+        val data = Json.parse(body)
+        val wallet = creditCardService.payment(id, walletId,
+          PaymentTransaction(data.value.toBareString.toFloat))
 
-    wallet match {
-      case Left(w) => Ok(write(w)).as(JSON)
-      case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
+        wallet match {
+          case Left(w) => Ok(write(w)).as(JSON)
+          case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
+        }
     }
   }
 }

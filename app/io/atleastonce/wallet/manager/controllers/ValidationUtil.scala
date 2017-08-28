@@ -174,4 +174,18 @@ object SchemaResources {
                                          |  "required":["credit", "cvv", "dueDate", "expirationDate", "number"],
                                          |  "type": "object"
                                          |}""".stripMargin
+
+  val paymentSchema: String = """{
+                                 |  "$schema": "http://json-schema.org/draft-04/schema#",
+                                 |  "definitions": {},
+                                 |  "id": "paymentSchema",
+                                 |  "properties": {
+                                 |    "value": {
+                                 |      "id": "/properties/value",
+                                 |      "type": "number"
+                                 |    }
+                                 |  },
+                                 |  "required": ["value"],
+                                 |  "type": "object"
+                                 |}""".stripMargin
 }
