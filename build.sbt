@@ -15,6 +15,8 @@ lazy val root = (project in file("."))
 
 scalaVersion := "2.12.2"
 
+resolvers += "emueller-bintray" at "http://dl.bintray.com/emueller/maven"
+
 libraryDependencies ++= Seq(
   guice,
   "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test,
@@ -22,7 +24,7 @@ libraryDependencies ++= Seq(
   "io.getquill" %% "quill-jdbc" % "1.3.0",
   "org.json4s" %% "json4s-native" % "3.5.2",
   "com.propensive" %% "rapture" % "2.0.0-M8",
-  "com.github.java-json-tools" % "json-schema-validator" % "2.2.8"
+  "com.eclipsesource" %% "play-json-schema-validator" % "0.9.4"
 )
 //libraryDependencies += guice
 //libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test

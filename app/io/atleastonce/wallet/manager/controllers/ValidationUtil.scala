@@ -1,26 +1,61 @@
 package io.atleastonce.wallet.manager.controllers
 
-import com.github.fge.jsonschema.main.JsonSchemaFactory
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.node.JsonNodeFactory
-import com.github.fge.jsonschema.core.util.AsJson
-import com.github.fge.jackson.JacksonUtils
+import com.eclipsesource.schema.{SchemaType, SchemaValidator}
+import play.api.Logger
+import play.api.libs.json.{JsError, JsSuccess, Json}
 
-object ValidationUtil {
-  private val VALIDATOR = JsonSchemaFactory.byDefault.getValidator
+import scala.util.{Failure, Success, Try}
 
-  private def buildResult(rawSchema: String, rawData: String): JsonNode = {
-    val ret = JsonNodeFactory.instance.objectNode
+object JsonSchemaValidator {
 
-    val schemaNode = ret.remove(rawSchema)
-    val data = ret.remove(rawData)
-
-    val report = VALIDATOR.validateUnchecked(schemaNode, data)
-    val success = report.isSuccess
-    val node = report.asInstanceOf[AsJson].asJson
-
-    ret.put("valid", success)
-    ret.put("results", JacksonUtils.prettyPrint(node))
-    ret
+  def validate(jsonSchema: String,
+               json: String,
+               schemaValidator: SchemaValidator = SchemaValidator()): Either[SchemaValidationException, String] = {
+    Try {
+      (Json.parse(jsonSchema), Json.parse(json))
+    } match {
+      case Success((schema, instance)) =>
+        schema.validate[SchemaType] match {
+          case JsSuccess(validSchema, _) =>
+            schemaValidator.validate(validSchema)(instance) match {
+              case JsSuccess(validInstance, _) =>
+                Right(validInstance.toString)
+              case JsError(errors) =>
+                val listErrors: List[String] = errors
+                  .map(
+                    e =>
+                      e._2
+                        .map(x => s"${if (e._1.path.nonEmpty) s"${e._1.path.mkString}: " else ""}${x.message}")
+                        .head
+                  )
+                  .toList
+                Left(SchemaValidationException(listErrors.mkString(",")))
+            }
+          case JsError(invalidSchema) =>
+            Left(SchemaValidationException(s"Invalid JSON schema. $invalidSchema"))
+        }
+      case Failure(ex) =>
+        Logger.error(s"Error while trying to parse request body or json schema", ex)
+        Left(SchemaValidationException(ex.getMessage))
+    }
   }
+
+}
+
+case class SchemaValidationException(msg: String) extends Exception(msg)
+
+object SchemaResources {
+  val createUserSchema = """{
+                           |  "$schema": "http://json-schema.org/draft-04/schema#",
+                           |  "definitions": {},
+                           |  "id": "http://example.com/example.json",
+                           |  "properties": {
+                           |    "name": {
+                           |      "id": "/properties/name",
+                           |      "type": "string"
+                           |    }
+                           |  },
+                           |  "required": ["name"]
+                           |  "type": "object"
+                           |}""".stripMargin
 }
