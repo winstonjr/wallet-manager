@@ -75,7 +75,7 @@ class WalletService @Inject()(walletRepo: WalletRepo,
       case Left(w) =>
         w.purchase(value) match {
           case Left(ts) =>
-            ts.foreach(t => creditCardService.purchase(id, w.id, t._2))
+            ts.foreach(t => creditCardService.purchase(t._1.id, w.id, t._2))
             this.loadFullById(id, userId)
           case Right(err) => Right(new Error(err.getMessage, err))
         }
