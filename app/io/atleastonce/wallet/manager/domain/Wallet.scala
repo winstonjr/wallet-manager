@@ -1,6 +1,6 @@
 package io.atleastonce.wallet.manager.domain
 
-import java.time.{LocalDateTime, ZoneOffset}
+import java.time.LocalDateTime
 
 case class Wallet(id: String,
                   credit: Float,

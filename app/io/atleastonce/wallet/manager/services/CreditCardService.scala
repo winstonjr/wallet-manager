@@ -16,7 +16,7 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
   def getCreditCard(id: String, walletId: String): Either[CreditCard, Throwable] = {
     creditCardRepo.getCreditCard(id, walletId) match {
       case Some(cc) => Left(cc.toCreditCard(transactionService.loadFull(cc.id)))
-      case None => Right(new Error("Não foi possível encontrar a carteira pesquisada"))
+      case None => Right(new Error("Não foi possível encontrar o cartão pesquisado"))
     }
   }
 

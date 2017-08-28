@@ -76,4 +76,12 @@ class WalletController  @Inject()(cc: ControllerComponents,
         }
     }
   }
+
+  def remove(userId: String, walletId: String, id: String): Action[AnyContent] =
+    Action { implicit request: Request[AnyContent] =>
+    walletService.remove(id, walletId, userId) match {
+      case Left(_) => NoContent
+      case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
+    }
+  }
 }

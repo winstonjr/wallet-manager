@@ -17,13 +17,14 @@ class CreditCardRepo @Inject()() {
 
   def getCreditCard(id: String, walletId: String): Option[CreditCardDTO] = {
     run(quote {
-      query[CreditCardDTO].filter(cc => cc.id == lift(id) && cc.walletId == lift(walletId))
+      query[CreditCardDTO].filter(cc => cc.id == lift(id) && cc.walletId == lift(walletId)
+        && cc.removed == lift(false))
     }).headOption
   }
 
   def getCreditCardsByWallet(walletId: String): List[CreditCardDTO] = {
     run(quote {
-      query[CreditCardDTO].filter(cc => cc.walletId == lift(walletId))
+      query[CreditCardDTO].filter(cc => cc.walletId == lift(walletId) && cc.removed == lift(false))
     })
   }
 

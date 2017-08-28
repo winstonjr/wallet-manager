@@ -82,4 +82,21 @@ class WalletService @Inject()(walletRepo: WalletRepo,
       case Right(r) => Right(r)
     }
   }
+
+  def remove(id: String, walletId: String, userId: String): Either[Boolean, Throwable] = {
+    this.getWallet(walletId, userId) match {
+      case Left(w) => w.cards.find(_.id == id) match {
+        case Some(cc) => w.removeCard(cc.number) match {
+          case Left(_) => creditCardService.update(cc.id, walletId, cc.number,
+            cc.cvv, cc.dueDate, cc.expirationDate, cc.credit, removed = true) match {
+            case Left(_) => Left(true)
+            case Right(err) => Right(err)
+          }
+          case Right(err) => Right(err)
+        }
+        case None => Right(new Error("Não foi possível encontrar o cartão a ser removido"))
+      }
+      case Right(err) => Right(err)
+    }
+  }
 }
