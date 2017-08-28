@@ -82,7 +82,7 @@ case class Wallet(id: String,
     * - The user must be able to access all the information of his/her wallet at any time (limit set
     * by the user, maximum limit and available credit)
     *
-    * @return valor de créditos diminuindo as transações já realizads
+    * @return valor de créditos diminuindo as transações já realizada
     */
   def getAvailableCredit: Float = {
     this.credit - cards.filter(_.isValid).map(_.getTransactions).sum
