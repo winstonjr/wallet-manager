@@ -14,7 +14,7 @@ Wallet Challenge
 ```
 flyway migrate
 ```
-* Digitar a senha do flyway quando solicitado
+* Digitar a senha do banco de dados quando solicitado
 ### execução do projeto
 ```sbtshell
 sbt \
@@ -78,8 +78,6 @@ http GET localhost:9000/users/$userId
 http GET localhost:9000/users/$userId
 ```
 ##### Carteiras
-echo '{"value":100.00}' |http POST localhost:9000/users/f9f392f2-772d-4085-8354-15af9989d5cc/wallets/f0bd4631-32e4-4905-af9d-7c626924c8ff/purchases
-
 * criar nova carteira
 ```
 echo '{"credit":0.00}' | http POST localhost:9000/users/$userId/wallets
@@ -103,10 +101,6 @@ echo '{"value":1000.00}' |http POST localhost:9000/users/f9f392f2-772d-4085-8354
 http GET localhost:9000/users/$userId/wallets/$walletId
 ```
 ##### Cartões de crédito
-
-
-
-http GET  localhost:9000/users/f9f392f2-772d-4085-8354-15af9989d5cc/wallets/f0bd4631-32e4-4905-af9d-7c626924c8ff/cards/625e2ed0-7977-47d1-90de-e80ab7996152
 * listar cartões de uma carteira
 ```
 http GET  localhost:9000/users/$userId/wallets/$walletId/cards
