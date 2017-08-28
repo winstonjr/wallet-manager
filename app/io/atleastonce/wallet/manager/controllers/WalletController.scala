@@ -23,7 +23,7 @@ class WalletController  @Inject()(cc: ControllerComponents,
       case Left(_) =>
         val data = Json.parse(body)
         walletService.save(userId, data.credit.toBareString.toFloat) match {
-          case Left(result) => Created(write(result)).as(JSON)
+          case Left(result) => Created(write(result.toViewModel)).as(JSON)
           case Right(err) => InternalServerError(s"""{"message":"${err.getMessage}"}""").as(JSON)
         }
     }
@@ -37,7 +37,7 @@ class WalletController  @Inject()(cc: ControllerComponents,
       case Left(_) =>
         val data = Json.parse(body)
         walletService.update(id, userId, data.credit.toBareString.toFloat) match {
-          case Left(result) => Created(write(result)).as(JSON)
+          case Left(result) => Created(write(result.toViewModel)).as(JSON)
           case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
         }
     }
@@ -47,7 +47,7 @@ class WalletController  @Inject()(cc: ControllerComponents,
     val wallet = walletService.getWallet(id, userId)
 
     wallet match {
-      case Left(w) => Ok(write(w)).as(JSON)
+      case Left(w) => Ok(write(w.toViewModel)).as(JSON)
       case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
     }
   }
@@ -56,7 +56,7 @@ class WalletController  @Inject()(cc: ControllerComponents,
     val wallet = walletService.getWalletsByUser(userId)
 
     wallet match {
-      case Left(w) => Ok(write(w)).as(JSON)
+      case Left(w) => Ok(write(w.map(_.toViewModel))).as(JSON)
       case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
     }
   }
@@ -71,7 +71,7 @@ class WalletController  @Inject()(cc: ControllerComponents,
         val wallet = walletService.purchase(id, userId, data.value.toBareString.toFloat)
 
         wallet match {
-          case Left(w) => Ok(write(w)).as(JSON)
+          case Left(w) => Ok(write(w.toViewModel)).as(JSON)
           case Right(m) => NotFound(s"""{"message":"${m.getMessage}"}""").as(JSON)
         }
     }

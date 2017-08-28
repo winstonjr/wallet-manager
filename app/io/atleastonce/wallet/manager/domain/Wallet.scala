@@ -138,6 +138,10 @@ case class Wallet(id: String,
     }
   }
 
+  def toViewModel: WalletViewModel = {
+    WalletViewModel(this.id, this.credit, this.getMaximumLimit, this.getAvailableCredit, cards)
+  }
+
   private def tryGetCreditCardForOneShotPayment(value: Float): Either[List[CreditCard], Throwable] = {
     val f1 = this.cards.filter(cc => cc.isValid && cc.getAvailableCredit >= value).sorted
 
@@ -189,3 +193,9 @@ case class WalletDTO(id: String,
       cards)
   }
 }
+
+case class WalletViewModel(id: String,
+                           credit: Float,
+                           maximumLimit: Float,
+                           availableCredit: Float,
+                           cards: List[CreditCard])
