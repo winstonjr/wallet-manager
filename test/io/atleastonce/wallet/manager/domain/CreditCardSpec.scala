@@ -251,6 +251,7 @@ class CreditCardSpec extends PlaySpec {
           cc.transactions.length mustBe 1
           cc.transactions.head.value mustBe 1000F
           cc.transactions.head.operation mustBe "debit"
+        case Right(_) =>
       }
     }
   }

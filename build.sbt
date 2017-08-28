@@ -21,7 +21,8 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "9.4.1208",
   "io.getquill" %% "quill-jdbc" % "1.3.0",
   "org.json4s" %% "json4s-native" % "3.5.2",
-  "com.propensive" %% "rapture" % "2.0.0-M8"
+  "com.propensive" %% "rapture" % "2.0.0-M8",
+  "com.github.java-json-tools" % "json-schema-validator" % "2.2.8"
 )
 //libraryDependencies += guice
 //libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test
