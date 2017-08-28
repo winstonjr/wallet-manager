@@ -135,6 +135,7 @@ echo '{ "value": 1000.00 }' | http POST localhost:9000/users/$userId/wallets/$wa
 * O multi-tenant não está totalmente correto, podem existir adições cruzadas nas carteiras
 * Não considera snapshots para o calculo do cartão (todo histórico de transações precisa estar na memória)
 * testes integrados não foram feitos
+* falta de comentários nos métodos dos controllers (para a geração automática de documentação)
 ## novidades (para mim)
 * Utilização do ORM Quill
 * Utilização do Rapture para de-serialização de dados
