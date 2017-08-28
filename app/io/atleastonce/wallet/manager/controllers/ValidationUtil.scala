@@ -100,4 +100,34 @@ object SchemaResources {
                                      |  "required": ["value"],
                                      |  "type": "object"
                                      |}""".stripMargin
+
+  val createCreditCardSchema: String = """{
+                                   |  "$schema": "http://json-schema.org/draft-04/schema#",
+                                   |  "definitions": {},
+                                   |  "id": "createCreditCardSchema",
+                                   |  "properties": {
+                                   |    "credit": {
+                                   |      "id": "/properties/credit",
+                                   |      "type": "integer"
+                                   |    },
+                                   |    "cvv": {
+                                   |      "id": "/properties/cvv",
+                                   |      "type": "string"
+                                   |    },
+                                   |    "dueDate": {
+                                   |      "id": "/properties/dueDate",
+                                   |      "type": "integer"
+                                   |    },
+                                   |    "expirationDate": {
+                                   |      "id": "/properties/expirationDate",
+                                   |      "type": "string"
+                                   |    },
+                                   |    "number": {
+                                   |      "id": "/properties/number",
+                                   |      "type": "string"
+                                   |    }
+                                   |  },
+                                   |  "required":["credit", "cvv", "dueDate", "expirationDate", "number"],
+                                   |  "type": "object"
+                                   |}""".stripMargin
 }
