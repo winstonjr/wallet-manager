@@ -15,16 +15,16 @@ class WalletRepo @Inject()() {
     "wallet.wallets"
   )
 
-  def getWallet(id: String, userId: String): Option[Wallet] = {
+  def getWallet(id: String, userId: String): Option[WalletDTO] = {
     run(quote {
       query[WalletDTO].filter(w => w.id == lift(id) && w.userId == lift(userId))
-    }).headOption.map(_.toWallet)
+    }).headOption
   }
 
-  def getWalletsByUser(userId: String): List[Wallet] = {
+  def getWalletsByUser(userId: String): List[WalletDTO] = {
     run(quote {
       query[WalletDTO].filter(w => w.userId == lift(userId))
-    }).map(_.toWallet)
+    })
   }
 
   def addWallet(wallet: WalletDTO): Either[Wallet, Throwable] = {
@@ -41,7 +41,7 @@ class WalletRepo @Inject()() {
     }
   }
 
-  def updateWallet(wallet: WalletDTO): Either[Wallet, Throwable] = {
+  def updateWallet(wallet: WalletDTO): Either[WalletDTO, Throwable] = {
     Try {
       run(quote {
         query[WalletDTO].filter(_.id == lift(wallet.id)).update(lift(wallet))
@@ -50,7 +50,7 @@ class WalletRepo @Inject()() {
       case Success(result) if result == 0 =>
         Right(new Error(s"Carteira com id #${wallet.id} não existe"))
       case Success(_) =>
-        Left(wallet.toWallet)
+        Left(wallet)
       case Failure(error) =>
         this.logger.error(s"Erro ao atualizar usuário #${wallet.id}", error)
         Right(new Error(s"Erro ao atualizar usuário #${wallet.id}", error))

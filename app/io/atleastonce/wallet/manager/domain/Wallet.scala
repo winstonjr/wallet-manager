@@ -180,4 +180,10 @@ case class WalletDTO(id: String,
     Wallet(id,
       credit)
   }
+
+  def toWallet(cards: List[CreditCard]): Wallet = {
+    Wallet(id,
+      credit,
+      cards)
+  }
 }

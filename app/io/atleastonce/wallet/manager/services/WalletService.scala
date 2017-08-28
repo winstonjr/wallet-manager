@@ -13,34 +13,35 @@ class WalletService @Inject()(walletRepo: WalletRepo,
                               creditCardService: CreditCardService) {
   def getWallet(id: String, userId: String): Either[Wallet, Throwable] = {
     walletRepo.getWallet(id, userId) match {
-      case Some(w) => Left(w)
+      case Some(w) => Left(w.toWallet(cards = creditCardService.loadFull(w.id)))
       case None => Right(new Error("Não foi possível encontrar a carteira pesquisada"))
     }
   }
 
   def getFullWallet(id: String, userId: String): Either[Wallet, Throwable] = {
     walletRepo.getWallet(id, userId) match {
-      case Some(w) => Left(w.copy(cards = creditCardService.loadFull(w.id)))
+      case Some(w) => Left(w.toWallet(cards = creditCardService.loadFull(w.id)))
       case None => Right(new Error("Não foi possível encontrar a carteira pesquisada"))
     }
   }
 
   def getWalletsByUser(userId: String): Either[List[Wallet], Throwable] = {
     walletRepo.getWalletsByUser(userId) match {
-      case wallets: List[Wallet] if wallets.isEmpty =>
+      case wallets: List[WalletDTO] if wallets.isEmpty =>
         Right(new Error("Não foi possível encontrar carteiras para este usuário"))
-      case wallets: List[Wallet] => Left(wallets)
+      case wallets: List[WalletDTO] => Left(wallets.map(wdto =>
+        wdto.toWallet(creditCardService.loadFull(wdto.id))))
       case _ =>
         Right(new Error("Não foi possível encontrar carteiras para este usuário"))
     }
   }
 
   def loadFull(userId: String): List[Wallet] = {
-    walletRepo.getWalletsByUser(userId).map(w => w.copy(cards = creditCardService.loadFull(w.id)))
+    walletRepo.getWalletsByUser(userId).map(w => w.toWallet(cards = creditCardService.loadFull(w.id)))
   }
 
   def loadFullById(id: String, userId: String): Either[Wallet, Throwable] = {
-    walletRepo.getWallet(id, userId).map(w => w.copy(cards = creditCardService.loadFull(w.id))) match {
+    walletRepo.getWallet(id, userId).map(w => w.toWallet(cards = creditCardService.loadFull(w.id))) match {
       case Some(ws) => Left(ws)
       case None => Right(new Error(s"Não foi possível encontrar a carteira procurada. Id: $id ::: userId: $userId"))
     }
@@ -59,7 +60,10 @@ class WalletService @Inject()(walletRepo: WalletRepo,
     this.getFullWallet(id, userId) match {
       case Left(w) =>
         Try(w.copy(credit = credit)) match {
-          case Success(wallet) => walletRepo.updateWallet(WalletDTO(wallet.id, credit, userId))
+          case Success(wallet) => walletRepo.updateWallet(WalletDTO(wallet.id, credit, userId)) match {
+            case Left(wdto) => this.loadFullById(id, userId)
+            case Right(err) => Right(err)
+          }
           case Failure(err) => Right(new Error(err.getMessage, err))
         }
       case Right(r) => Right(r)
