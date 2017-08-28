@@ -32,9 +32,16 @@ case class CreditCard(id: String,
     * @return valor disponível para uso em determinado momento
     */
   def getAvailableCredit: Float = {
-    val accumulatedValue = transactions.map(_.getValueWithSignal).sum
+    credit - getTransactions
+  }
 
-    credit - accumulatedValue
+  /**
+    * Método responsável por devolver as transações de um cartão
+    *
+    * @return valor total de transações
+    */
+  def getTransactions: Float = {
+    transactions.map(_.getValueWithSignal).sum
   }
 
   /**
@@ -80,7 +87,7 @@ case class CreditCard(id: String,
     * @return True caso o cartão esteja válido False caso contrário
     */
   def isValid: Boolean = {
-    this.expirationDate.isAfter(LocalDateTime.now)
+    this.expirationDate.isAfter(LocalDateTime.now) && !this.removed
   }
 
   /**

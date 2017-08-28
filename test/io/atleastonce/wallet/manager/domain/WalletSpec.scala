@@ -180,13 +180,15 @@ class WalletSpec extends PlaySpec {
     "have the right limit when transactions are defined" in {
       val cc1 = CreditCard("5febb7b0-4082-4138-aced-7189e1cc464a", "1234123412341234", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
-        transactions = List(DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
+        transactions = List(
+          DebitTransaction(100F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
       val cc2 = CreditCard("ad4e0751-6fc4-4e28-b79a-74e59f23d8e6", "4321432143214321", "123",
         15, LocalDateTime.now().plusYears(5L), 500F,
-        transactions = List(DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
+        transactions = List(
+          DebitTransaction(200F, LocalDateTime.now), PaymentTransaction(50F, LocalDateTime.now)))
       val wallet = Wallet("38e16da6-fee6-4053-9633-a499182ddc43", 400F, List(cc1, cc2))
 
-      wallet.getAvailableCredit mustBe 800F
+      wallet.getAvailableCredit mustBe 200F
     }
 
     "could not select credit cards for buy if the ammount is bigger than all available limit" in {

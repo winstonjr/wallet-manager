@@ -81,9 +81,11 @@ case class Wallet(id: String,
     * Método responsável por retornar o limite disponível na carteira
     * - The user must be able to access all the information of his/her wallet at any time (limit set
     * by the user, maximum limit and available credit)
+    *
+    * @return valor de créditos diminuindo as transações já realizads
     */
   def getAvailableCredit: Float = {
-    cards.filter(_.isValid).map(_.getAvailableCredit).sum
+    this.credit - cards.filter(_.isValid).map(_.getTransactions).sum
   }
 
   /**
