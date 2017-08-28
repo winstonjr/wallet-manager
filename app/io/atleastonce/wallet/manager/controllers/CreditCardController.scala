@@ -46,7 +46,7 @@ class CreditCardController @Inject()(cc: ControllerComponents,
       data.dueDate.toBareString.toInt,
       LocalDateTime.of(localDate, LocalTime.now),
       data.credit.toBareString.toFloat,
-      data.removed.toBareString.toBoolean) match {
+      false) match {
       case Left(result) => Created(write(result)).as(JSON)
       case Right(e) => NotFound(s"""{"message":"${e.getMessage}"}""").as(JSON)
     }
