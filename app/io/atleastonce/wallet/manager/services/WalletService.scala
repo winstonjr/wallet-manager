@@ -18,6 +18,13 @@ class WalletService @Inject()(walletRepo: WalletRepo,
     }
   }
 
+  def getFullWallet(id: String, userId: String): Either[Wallet, Throwable] = {
+    walletRepo.getWallet(id, userId) match {
+      case Some(w) => Left(w.copy(cards = creditCardService.loadFull(w.id)))
+      case None => Right(new Error("Não foi possível encontrar a carteira pesquisada"))
+    }
+  }
+
   def getWalletsByUser(userId: String): Either[List[Wallet], Throwable] = {
     walletRepo.getWalletsByUser(userId) match {
       case wallets: List[Wallet] if wallets.isEmpty =>
@@ -49,7 +56,7 @@ class WalletService @Inject()(walletRepo: WalletRepo,
   }
 
   def update(id: String, userId: String, credit: Float): Either[Wallet, Throwable] = {
-    this.getWallet(id, userId) match {
+    this.getFullWallet(id, userId) match {
       case Left(w) =>
         Try(w.copy(credit = credit)) match {
           case Success(wallet) => walletRepo.updateWallet(WalletDTO(wallet.id, credit, userId))

@@ -18,12 +18,13 @@ flyway migrate
 ### execução do projeto
 ```sbtshell
 sbt \
-    -Dctx.dataSource.password=[senha do banco de dados]       \
-    -Dctx.dataSource.user=[usuário do banco de dados]         \
-    -Dctx.dataSource.databaseName=[nome do banco de dados]    \
-    -Dctx.dataSource.portNumber=[porta do banco de dados]     \
-    -Dctx.dataSource.serverName=[IP ou URI do banco de dados] \
-    -Dctx.dataSource.ssl=[Se utiliza ssl ou não true/false]   \
+    -Dctx.dataSource.password=[senha do banco de dados]         \
+    -Dctx.dataSource.user=[usuário do banco de dados]           \
+    -Dctx.dataSource.databaseName=[nome do banco de dados]      \
+    -Dctx.dataSource.portNumber=[porta do banco de dados]       \
+    -Dctx.dataSource.serverName=[IP ou URI do banco de dados]   \
+    -Dctx.dataSource.ssl=[Se utiliza ssl ou não true/false]     \
+    -Dctx.dataSource.sslfactory=[qual factory caso utilize ssl] \
 run
 ```
 ### deploy do projeto

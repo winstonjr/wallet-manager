@@ -15,16 +15,17 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
 
   def getCreditCard(id: String, walletId: String): Either[CreditCard, Throwable] = {
     creditCardRepo.getCreditCard(id, walletId) match {
-      case Some(w) => Left(w)
+      case Some(cc) => Left(cc.toCreditCard(transactionService.loadFull(cc.id)))
       case None => Right(new Error("Não foi possível encontrar a carteira pesquisada"))
     }
   }
 
   def getCreditCardsByWallet(walletId: String): Either[List[CreditCard], Throwable] = {
     creditCardRepo.getCreditCardsByWallet(walletId) match {
-      case creditCards: List[CreditCard] if creditCards.isEmpty =>
+      case creditCards: List[CreditCardDTO] if creditCards.isEmpty =>
         Right(new Error("Não foi possível encontrar cartões de crédito para esta carteira"))
-      case creditCards: List[CreditCard] => Left(creditCards)
+      case creditCards: List[CreditCardDTO] => Left(creditCards.map(cc =>
+        cc.toCreditCard(transactionService.loadFull(cc.id))))
       case _ =>
         Right(new Error("Não foi possível encontrar cartões de crédito para esta carteira"))
     }
@@ -32,7 +33,7 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
 
   def loadFull(walletId: String): List[CreditCard] = {
     creditCardRepo.getCreditCardsByWallet(walletId)
-      .map(cc => cc.copy(transactions = transactionService.loadFull(cc.id)))
+      .map(cc => cc.toCreditCard(transactions = transactionService.loadFull(cc.id)))
   }
 
   def save(walletId: String, number: String, cvv: String, dueDate: Int,
@@ -53,7 +54,10 @@ class CreditCardService @Inject()(creditCardRepo: CreditCardRepo,
         Try(cc.copy(number = number, cvv = cvv, dueDate = dueDate, expirationDate = expirationDate,
           credit = credit, removed = removed)) match {
           case Success(_) => creditCardRepo.updateCreditCard(CreditCardDTO(id, number,
-            cvv, dueDate, expirationDate, credit, removed, walletId))
+            cvv, dueDate, expirationDate, credit, removed, walletId)) match {
+              case Left(cc) => Left(cc.toCreditCard(transactionService.loadFull(cc.id)))
+              case Right(err) => Right(err)
+            }
           case Failure(err) => Right(new Error(err.getMessage, err))
         }
       case Right(r) => Right(r)

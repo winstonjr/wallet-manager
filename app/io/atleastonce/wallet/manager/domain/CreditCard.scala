@@ -121,6 +121,17 @@ case class CreditCardDTO(id: String,
                          credit: Float,
                          removed: Boolean,
                          walletId: String) {
+  def toCreditCard(transactions: List[Transaction]): CreditCard = {
+    CreditCard(id,
+      number,
+      cvv,
+      dueDate,
+      expirationDate,
+      credit,
+      removed,
+      transactions)
+  }
+
   def toCreditCard: CreditCard = {
     CreditCard(id,
       number,
@@ -129,5 +140,4 @@ case class CreditCardDTO(id: String,
       expirationDate,
       credit,
       removed)
-  }
-}
+  }}

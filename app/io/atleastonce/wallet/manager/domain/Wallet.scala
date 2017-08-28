@@ -11,7 +11,7 @@ case class Wallet(id: String,
   require(uuidReg.findFirstIn(id).isDefined, "id deve ser um UUID")
   require(credit >= 0F, "O valor mínimo da carteira é 0")
   assume(credit <= this.getMaximumLimit,
-    "O limite máximo de um cartão de uma carteira não pode ultrapassar a soma dos limites dos cartões")
+    "O limite máximo de uma carteira não pode ultrapassar a soma dos limites dos cartões")
 
   private implicit val ord = new Ordering[CreditCard] {
     def compare(self: CreditCard, that: CreditCard): Int = {

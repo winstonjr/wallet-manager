@@ -15,16 +15,16 @@ class CreditCardRepo @Inject()() {
     "wallet.credit_cards"
   )
 
-  def getCreditCard(id: String, walletId: String): Option[CreditCard] = {
+  def getCreditCard(id: String, walletId: String): Option[CreditCardDTO] = {
     run(quote {
       query[CreditCardDTO].filter(cc => cc.id == lift(id) && cc.walletId == lift(walletId))
-    }).headOption.map(_.toCreditCard)
+    }).headOption
   }
 
-  def getCreditCardsByWallet(walletId: String): List[CreditCard] = {
+  def getCreditCardsByWallet(walletId: String): List[CreditCardDTO] = {
     run(quote {
       query[CreditCardDTO].filter(cc => cc.walletId == lift(walletId))
-    }).map(_.toCreditCard)
+    })
   }
 
   def addCreditCard(creditCard: CreditCardDTO): Either[CreditCard, Throwable] = {
@@ -41,7 +41,7 @@ class CreditCardRepo @Inject()() {
     }
   }
 
-  def updateCreditCard(creditCard: CreditCardDTO): Either[CreditCard, Throwable] = {
+  def updateCreditCard(creditCard: CreditCardDTO): Either[CreditCardDTO, Throwable] = {
     Try {
       run(quote {
         query[CreditCardDTO].filter(_.id == lift(creditCard.id)).update(lift(creditCard))
@@ -50,7 +50,7 @@ class CreditCardRepo @Inject()() {
       case Success(result) if result == 0 =>
         Right(new Error(s"Cartão de Crédito com id #${creditCard.id} não existe"))
       case Success(_) =>
-        Left(creditCard.toCreditCard)
+        Left(creditCard)
       case Failure(error) =>
         this.logger.error(s"Erro ao atualizar Cartão de Crédito #${creditCard.id}", error)
         Right(new Error(s"Erro ao atualizar Cartão de Crédito #${creditCard.id}", error))
