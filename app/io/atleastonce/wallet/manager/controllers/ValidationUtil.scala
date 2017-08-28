@@ -45,7 +45,21 @@ object JsonSchemaValidator {
 case class SchemaValidationException(msg: String) extends Exception(msg)
 
 object SchemaResources {
-  val createUserSchema = """{
+  val createUserSchema: String = """{
+                           |  "$schema": "http://json-schema.org/draft-04/schema#",
+                           |  "definitions": {},
+                           |  "id": "http://example.com/example.json",
+                           |  "properties": {
+                           |    "name": {
+                           |      "id": "/properties/name",
+                           |      "type": "string"
+                           |    }
+                           |  },
+                           |  "required": ["name"],
+                           |  "type": "object"
+                           |}""".stripMargin
+
+  val updateUserSchema: String = """{
                            |  "$schema": "http://json-schema.org/draft-04/schema#",
                            |  "definitions": {},
                            |  "id": "http://example.com/example.json",
