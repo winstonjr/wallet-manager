@@ -48,7 +48,7 @@ object SchemaResources {
   val createUserSchema: String = """{
                            |  "$schema": "http://json-schema.org/draft-04/schema#",
                            |  "definitions": {},
-                           |  "id": "http://example.com/example.json",
+                           |  "id": "createUserSchema",
                            |  "properties": {
                            |    "name": {
                            |      "id": "/properties/name",
@@ -62,7 +62,7 @@ object SchemaResources {
   val updateUserSchema: String = """{
                            |  "$schema": "http://json-schema.org/draft-04/schema#",
                            |  "definitions": {},
-                           |  "id": "http://example.com/example.json",
+                           |  "id": "updateUserSchema",
                            |  "properties": {
                            |    "name": {
                            |      "id": "/properties/name",
@@ -72,4 +72,18 @@ object SchemaResources {
                            |  "required": ["name"],
                            |  "type": "object"
                            |}""".stripMargin
+
+  val createWalletSchema: String = """{
+                                   |  "$schema": "http://json-schema.org/draft-04/schema#",
+                                   |  "definitions": {},
+                                   |  "id": "createWalletSchema",
+                                   |  "properties": {
+                                   |    "credit": {
+                                   |      "id": "/properties/credit",
+                                   |      "type": "string"
+                                   |    }
+                                   |  },
+                                   |  "required": ["credit"],
+                                   |  "type": "object"
+                                   |}""".stripMargin
 }

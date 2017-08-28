@@ -36,7 +36,7 @@ class UserController @Inject()(cc: ControllerComponents,
 
   def updateUser(id: String): Action[JsValue] = Action(parse.json) { implicit request =>
     val body = request.body.toString
-    JsonSchemaValidator.validate(SchemaResources.createUserSchema, body) match {
+    JsonSchemaValidator.validate(SchemaResources.updateUserSchema, body) match {
       case Right(err: SchemaValidationException) =>
         PreconditionFailed(s"""{"errors":"$err"}""").as(JSON)
       case Left(_) =>
